@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalHabitat.API", "AnimalHabitat.API\AnimalHabitat.API.csproj", "{DD604E4D-528A-4981-92B5-6F6D17E49166}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalHabitat.Client", "AnimalHabitat.Client\AnimalHabitat.Client.csproj", "{E4FABA72-B0C4-4D9B-B4C0-FF9185866E2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD604E4D-528A-4981-92B5-6F6D17E49166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD604E4D-528A-4981-92B5-6F6D17E49166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD604E4D-528A-4981-92B5-6F6D17E49166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD604E4D-528A-4981-92B5-6F6D17E49166}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4FABA72-B0C4-4D9B-B4C0-FF9185866E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4FABA72-B0C4-4D9B-B4C0-FF9185866E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {288674AE-B9DD-44E9-9CB7-B9EE1FB206FE}
+	EndGlobalSection
+EndGlobal
