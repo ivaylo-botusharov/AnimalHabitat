@@ -2,7 +2,6 @@
 using AnimalHabitat.Data.Models;
 using AnimalHabitat.Data.UnitOfWork;
 using AnimalHabitat.ServiceContracts;
-using AnimalHabitat.ViewModels.Animals;
 
 namespace AnimalHabitat.Services
 {
@@ -24,17 +23,9 @@ namespace AnimalHabitat.Services
             return animal;
         }
 
-        public IQueryable<AnimalViewModel> GetAnimals()
+        public IQueryable<Animal> GetAnimals()
         {
-            IQueryable<AnimalViewModel> animals = this.unitOfWork.AnimalRepository
-                .All()
-                .Select(a => new AnimalViewModel()
-                {
-                    Id = a.Id,
-                    Species = a.Species,
-                    ContinentalHabitat = a.Continent.Name,
-                    Count = a.Count
-                });
+            IQueryable<Animal> animals = this.unitOfWork.AnimalRepository.All();
 
             return animals;
         }

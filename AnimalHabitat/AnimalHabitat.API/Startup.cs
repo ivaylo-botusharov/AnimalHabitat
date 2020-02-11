@@ -9,7 +9,8 @@ using Microsoft.OData.Edm;
 using AnimalHabitat.Data.Models;
 using AnimalHabitat.DI;
 using AnimalHabitat.DTO;
-using AnimalHabitat.ViewModels.Animals;
+using AutoMapper;
+using AnimalHabitat.API.Models;
 
 namespace AnimalHabitat.API
 {
@@ -31,6 +32,8 @@ namespace AnimalHabitat.API
             AppData appData = Configuration.GetSection("AppData").Get<AppData>();
 
             services.AddDependencyInjection(DiContainers.AspNetCoreDependencyInjector, appData);
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddControllers(mvcOptions =>
                 mvcOptions.EnableEndpointRouting = false);
@@ -62,7 +65,7 @@ namespace AnimalHabitat.API
 
             app.UseMvc(routeBuilder =>
             {
-                routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(null);
+                routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(100);
                 routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
         }

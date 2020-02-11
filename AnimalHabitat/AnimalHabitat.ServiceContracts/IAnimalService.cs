@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using AnimalHabitat.Data.Models;
-using AnimalHabitat.ViewModels.Animals;
 
 namespace AnimalHabitat.ServiceContracts
 {
@@ -9,6 +8,6 @@ namespace AnimalHabitat.ServiceContracts
     {
         Animal GetAnimalById(int id);
 
-        IQueryable<AnimalViewModel> GetAnimals();
+        IQueryable<Animal> GetAnimals();
     }
 }

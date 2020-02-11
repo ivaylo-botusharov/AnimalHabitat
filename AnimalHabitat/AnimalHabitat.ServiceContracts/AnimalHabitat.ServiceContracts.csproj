@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AnimalHabitat.Data\AnimalHabitat.Data.csproj" />
-    <ProjectReference Include="..\AnimalHabitat.ViewModels\AnimalHabitat.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

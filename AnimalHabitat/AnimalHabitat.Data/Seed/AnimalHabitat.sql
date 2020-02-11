@@ -65,11 +65,39 @@ GO
 DECLARE @africaContinentId INT;
 SET @africaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'Africa');
 
+DECLARE @antarcticaContinentId INT;
+SET @antarcticaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'Antarctica');
+
+DECLARE @asiaContinentId INT;
+SET @asiaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'Asia');
+
+DECLARE @australiaContinentId INT;
+SET @australiaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'Australia');
+
+DECLARE @europeContinentId INT;
+SET @europeContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'Europe');
+
 DECLARE @northAmericaContinentId INT;
 SET @northAmericaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'North America');
 
+DECLARE @southAmericaContinentId INT;
+SET @southAmericaContinentId = (SELECT TOP 1 Id FROM "Continent" WHERE [Name] = 'South America');
+
 INSERT INTO "Animal" ([Species], [ContinentId], [Count])
 VALUES 
-	('Gabon', @africaContinentId, 900),
-	('Deer', @northAmericaContinentId, 1200)
+	('White Hourse', @europeContinentId, 900),
+	('Kangaroo', @australiaContinentId, 6200),
+	('Black Bear', @northAmericaContinentId, 5600),
+	('Bonobo', @asiaContinentId, 7100),
+	('Lemur', @northAmericaContinentId, 3400),
+	('Elephant', @asiaContinentId, 4600),
+	('Zebra', @africaContinentId, 2100),
+	('Vervet Monkey', @northAmericaContinentId, 8300),
+	('Brown Fox',@europeContinentId, 2150),
+	('Gibbon',@africaContinentId, 400),
+	('Gorilla', @asiaContinentId, 550),
+	('Lion', @africaContinentId, 700),
+	('Koala', @asiaContinentId, 5200),
+	('White Tiger', @asiaContinentId, 320),
+	('Black Bear', @southAmericaContinentId, 560)
 GO

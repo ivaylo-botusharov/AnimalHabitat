@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalHabitat.DI", "AnimalH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnimalHabitat.DTO", "AnimalHabitat.DTO\AnimalHabitat.DTO.csproj", "{534F15ED-F97A-4B54-BBCB-B8B7DEDF33F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnimalHabitat.ViewModels", "AnimalHabitat.ViewModels\AnimalHabitat.ViewModels.csproj", "{E8CA8C0E-F979-4217-B80B-B4F652E84849}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,10 +49,6 @@ Global
 		{534F15ED-F97A-4B54-BBCB-B8B7DEDF33F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{534F15ED-F97A-4B54-BBCB-B8B7DEDF33F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{534F15ED-F97A-4B54-BBCB-B8B7DEDF33F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8CA8C0E-F979-4217-B80B-B4F652E84849}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8CA8C0E-F979-4217-B80B-B4F652E84849}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8CA8C0E-F979-4217-B80B-B4F652E84849}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8CA8C0E-F979-4217-B80B-B4F652E84849}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
