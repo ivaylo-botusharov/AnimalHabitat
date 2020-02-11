@@ -1,0 +1,6 @@
+{
+  "AppData": {
+    "AnimalHabitatDbConnectionString": "Server=(localdb)\\mssqllocaldb;Database=AnimalHabitat;Trusted_Connection=True;Connect Timeout=100",
+    "MasterDbConnectionString": "Server=(localdb)\\mssqllocaldb;Database=master;Trusted_Connection=True;Connect Timeout=100"
+  }
+}

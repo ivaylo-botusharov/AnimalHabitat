@@ -1,8 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using AnimalHabitat.API.Models;
+﻿using System.Collections.Generic;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using AnimalHabitat.Data.Models;
+using AnimalHabitat.ServiceContracts;
+using AnimalHabitat.ViewModels.Animals;
+using System.Linq;
 
 namespace AnimalHabitat.API.Controllers
 {
@@ -10,28 +12,19 @@ namespace AnimalHabitat.API.Controllers
     [Route("api/[controller]")]
     public class AnimalsController : ControllerBase
     {
-        [HttpGet]
-        [EnableQuery()]
-        public IEnumerable<Animal> Get()
-        {
-            var animals = new List<Animal>()
-            {
-                CreateNewAnimal("Gabon", "Africa", 900),
-                CreateNewAnimal("Deer", "North America", 1200)
-            };
+        private readonly IAnimalService animalService;
 
-            return animals;
+        public AnimalsController(IAnimalService animalService)
+        {
+            this.animalService = animalService;
         }
 
-        private static Animal CreateNewAnimal(string species, string continentalHabitat, int count)
+        [HttpGet]
+        [EnableQuery()]
+        public IQueryable<AnimalViewModel> Get()
         {
-            return new Animal
-            {
-                Id = Guid.NewGuid(),
-                Species = species,
-                ContinentalHabitat = continentalHabitat,
-                Count = count
-            };
+            IQueryable<AnimalViewModel> animals = this.animalService.GetAnimals();
+            return animals;
         }
     }
 }

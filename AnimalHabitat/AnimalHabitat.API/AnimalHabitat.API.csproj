@@ -10,5 +10,15 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AnimalHabitat.Data\AnimalHabitat.Data.csproj" />
+    <ProjectReference Include="..\AnimalHabitat.DI\AnimalHabitat.DI.csproj" />
+    <ProjectReference Include="..\AnimalHabitat.ServiceContracts\AnimalHabitat.ServiceContracts.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace AnimalHabitat.API.Models
+﻿namespace AnimalHabitat.ViewModels.Animals
 {
-    public class Animal
+    public class AnimalViewModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public string Species { get; set; }
 

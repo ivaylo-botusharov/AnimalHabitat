@@ -1,4 +1,3 @@
-using AnimalHabitat.API.Models;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -7,6 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OData.Edm;
+using AnimalHabitat.Data.Models;
+using AnimalHabitat.DI;
+using AnimalHabitat.DTO;
+using AnimalHabitat.ViewModels.Animals;
 
 namespace AnimalHabitat.API
 {
@@ -24,6 +27,10 @@ namespace AnimalHabitat.API
             services.AddCors(options => options.AddPolicy(
                 "AllowAll", 
                 p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
+            AppData appData = Configuration.GetSection("AppData").Get<AppData>();
+
+            services.AddDependencyInjection(DiContainers.AspNetCoreDependencyInjector, appData);
 
             services.AddControllers(mvcOptions =>
                 mvcOptions.EnableEndpointRouting = false);
@@ -63,7 +70,9 @@ namespace AnimalHabitat.API
         IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
+            odataBuilder.EntitySet<AnimalViewModel>("AnimalViewModels");
             odataBuilder.EntitySet<Animal>("Animals");
+            odataBuilder.EntitySet<Continent>("Continent");
 
             return odataBuilder.GetEdmModel();
         }
