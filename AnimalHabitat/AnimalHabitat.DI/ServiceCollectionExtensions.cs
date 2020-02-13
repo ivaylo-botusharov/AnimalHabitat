@@ -14,10 +14,10 @@ namespace AnimalHabitat.DI
     {
         public static IServiceCollection AddDependencyInjection(
             this IServiceCollection services,
-            DiContainers selectedContainer,
+            DiContainer selectedContainer,
             AppData appData)
         {
-            if (selectedContainer == DiContainers.AspNetCoreDependencyInjector)
+            if (selectedContainer == DiContainer.AspNetCoreDependencyInjector)
             {
                 BindRepositories(services);
                 BindServices(services);

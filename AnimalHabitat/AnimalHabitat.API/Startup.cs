@@ -23,25 +23,7 @@ namespace AnimalHabitat.API
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddCors(options => options.AddPolicy(
-                "AllowAll",
-                p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
-
-            AppData appData = this.Configuration.GetSection("AppData").Get<AppData>();
-
-            services.AddDependencyInjection(DiContainers.AspNetCoreDependencyInjector, appData);
-
-            services.AddAutoMapper(typeof(Startup));
-
-            services.AddControllers(mvcOptions =>
-                mvcOptions.EnableEndpointRouting = false);
-
-            services.AddOData();
-        }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -65,11 +47,29 @@ namespace AnimalHabitat.API
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(100);
-                routeBuilder.MapODataServiceRoute("odata", "odata", this.GetEdmModel());
+                routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
             });
         }
 
-        private IEdmModel GetEdmModel()
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddCors(options => options.AddPolicy(
+                "AllowAll",
+                p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+
+            AppData appData = this.Configuration.GetSection("AppData").Get<AppData>();
+
+            services.AddDependencyInjection(DiContainer.AspNetCoreDependencyInjector, appData);
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddControllers(mvcOptions =>
+                mvcOptions.EnableEndpointRouting = false);
+
+            services.AddOData();
+        }
+
+        private static IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<AnimalViewModel>("AnimalViewModels");

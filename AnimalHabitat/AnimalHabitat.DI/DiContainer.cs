@@ -1,6 +1,6 @@
 ﻿namespace AnimalHabitat.DI
 {
-    public enum DiContainers
+    public enum DiContainer
     {
         AspNetCoreDependencyInjector,
     }

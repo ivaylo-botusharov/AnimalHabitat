@@ -10,7 +10,7 @@ using Microsoft.Extensions.Hosting;
 
 namespace AnimalHabitat.API
 {
-    public class Program
+    public static class Program
     {
         public static void Main(string[] args)
         {
@@ -30,6 +30,7 @@ namespace AnimalHabitat.API
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex);
+                    throw new Exception(ex.Message);
                 }
             }
 
