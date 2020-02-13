@@ -1,12 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using AnimalHabitat.Data.Contexts;
+﻿using AnimalHabitat.Data.Contexts;
 using AnimalHabitat.Data.Repositories;
 using AnimalHabitat.Data.Repositories.Contracts;
 using AnimalHabitat.Data.UnitOfWork;
 using AnimalHabitat.DTO;
 using AnimalHabitat.ServiceContracts;
 using AnimalHabitat.Services;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AnimalHabitat.DI
 {

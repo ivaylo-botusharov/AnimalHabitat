@@ -8,8 +8,9 @@ namespace AnimalHabitat.API.Mappings
     {
         public OrganizationalProfile()
         {
-            CreateMap<Animal, AnimalViewModel>()
-                .ForMember(dest =>
+            this.CreateMap<Animal, AnimalViewModel>()
+                .ForMember(
+                    dest =>
                     dest.ContinentalHabitat,
                     opt => opt.MapFrom(src => src.Continent.Name));
         }

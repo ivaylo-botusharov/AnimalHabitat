@@ -1,3 +1,8 @@
+using AnimalHabitat.API.Models;
+using AnimalHabitat.Data.Models;
+using AnimalHabitat.DI;
+using AnimalHabitat.DTO;
+using AutoMapper;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -6,11 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OData.Edm;
-using AnimalHabitat.Data.Models;
-using AnimalHabitat.DI;
-using AnimalHabitat.DTO;
-using AutoMapper;
-using AnimalHabitat.API.Models;
 
 namespace AnimalHabitat.API
 {
@@ -18,7 +18,7 @@ namespace AnimalHabitat.API
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            this.Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -26,10 +26,10 @@ namespace AnimalHabitat.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddCors(options => options.AddPolicy(
-                "AllowAll", 
+                "AllowAll",
                 p => p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
-            AppData appData = Configuration.GetSection("AppData").Get<AppData>();
+            AppData appData = this.Configuration.GetSection("AppData").Get<AppData>();
 
             services.AddDependencyInjection(DiContainers.AspNetCoreDependencyInjector, appData);
 
@@ -57,20 +57,19 @@ namespace AnimalHabitat.API
             app.UseAuthorization();
 
             // TODO: Disabled because OData doesn't support it for now
-            // When OData implements it, should be uncommented and app.UseMvc should be removed  
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
-
+            // When OData implements it, should be uncommented and app.UseMvc should be removed
+            // app.UseEndpoints(endpoints =>
+            // {
+            //     endpoints.MapControllers();
+            // });
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.Select().Filter().Expand().OrderBy().Count().MaxTop(100);
-                routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
+                routeBuilder.MapODataServiceRoute("odata", "odata", this.GetEdmModel());
             });
         }
 
-        IEdmModel GetEdmModel()
+        private IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<AnimalViewModel>("AnimalViewModels");

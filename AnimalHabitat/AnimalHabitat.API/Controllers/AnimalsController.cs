@@ -1,10 +1,9 @@
-﻿using Microsoft.AspNet.OData;
-using Microsoft.AspNetCore.Mvc;
-using AnimalHabitat.ServiceContracts;
-using System.Linq;
-using AutoMapper.QueryableExtensions;
+﻿using System.Linq;
 using AnimalHabitat.API.Models;
+using AnimalHabitat.ServiceContracts;
 using AutoMapper;
+using Microsoft.AspNet.OData;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AnimalHabitat.API.Controllers
 {
@@ -22,10 +21,12 @@ namespace AnimalHabitat.API.Controllers
         }
 
         [HttpGet]
-        [EnableQuery()]
+        [EnableQuery]
         public IQueryable<AnimalViewModel> Get()
         {
-            IQueryable<AnimalViewModel> animals = mapper.ProjectTo<AnimalViewModel>(this.animalService.GetAnimals());
+            IQueryable<AnimalViewModel> animals = this.mapper
+                .ProjectTo<AnimalViewModel>(this.animalService.GetAnimals());
+
             return animals;
         }
     }

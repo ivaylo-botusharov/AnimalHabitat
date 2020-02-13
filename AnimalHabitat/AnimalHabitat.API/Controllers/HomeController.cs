@@ -8,7 +8,7 @@ namespace AnimalHabitat.API.Controllers
     {
         public IActionResult Get()
         {
-            return Ok("The application has started...");
+            return this.Ok("The application has started...");
         }
     }
 }
