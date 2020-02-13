@@ -2,11 +2,11 @@ using System;
 using System.Diagnostics;
 using AnimalHabitat.Data.Contexts;
 using AnimalHabitat.Data.Seed;
+using AnimalHabitat.DTO.Exceptions;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace AnimalHabitat.API
 {
@@ -30,7 +30,7 @@ namespace AnimalHabitat.API
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex);
-                    throw new Exception(ex.Message);
+                    throw new DatabaseSeedFailedException(ex.Message);
                 }
             }
 

@@ -38,7 +38,7 @@ namespace AnimalHabitat.API
 
             app.UseAuthorization();
 
-            // TODO: Disabled because OData doesn't support it for now
+            // Disabled because OData doesn't support it for now
             // When OData implements it, should be uncommented and app.UseMvc should be removed
             // app.UseEndpoints(endpoints =>
             // {
