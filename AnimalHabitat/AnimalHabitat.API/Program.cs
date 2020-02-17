@@ -22,7 +22,7 @@ namespace AnimalHabitat.API
 
                 try
                 {
-                    var animalHabitatContext = services.GetRequiredService<AnimalHabitatContext>();
+                    var animalHabitatContext = services.GetRequiredService<EcologyContext>();
                     var masterContext = services.GetRequiredService<MasterContext>();
 
                     DatabaseInitializer.SeedData(animalHabitatContext, masterContext);

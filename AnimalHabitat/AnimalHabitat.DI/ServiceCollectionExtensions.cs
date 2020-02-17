@@ -30,22 +30,21 @@ namespace AnimalHabitat.DI
         public static void BindRepositories(IServiceCollection services)
         {
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddScoped<IAnimalRepository, AnimalRepository>();
-            services.AddScoped<IContinentRepository, ContinentRepository>();
+            services.AddScoped<ISpeciesDistributionRepository, SpeciesDistributionRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
 
         public static void BindServices(IServiceCollection services)
         {
-            services.AddScoped<IAnimalService, AnimalService>();
+            services.AddScoped<ISpeciesDistributionService, SpeciesDistributionService>();
             services.AddScoped<IDatabaseConfigurationService, DatabaseConfigurationService>();
         }
 
         public static void BindDbContexts(IServiceCollection services, AppData appData)
         {
             services.AddDbContext<MasterContext>(options => options.UseSqlServer(appData.MasterDbConnectionString));
-            services.AddDbContext<AnimalHabitatContext>(options => options.UseSqlServer(appData.AnimalHabitatDbConnectionString));
+            services.AddDbContext<EcologyContext>(options => options.UseSqlServer(appData.AnimalHabitatDbConnectionString));
         }
     }
 }

@@ -1,0 +1,26 @@
+<h2 class="content-block">Animals Habitat Form</h2>
+
+<div class="content-block dx-card responsive-paddings">
+    <form action="your-action" (submit)="onFormSubmit($event)">
+        <dx-form id="form"
+            [formData]="animals"
+            [readOnly]="false"
+            [showColonAfterLabel]="true"
+            [showValidationSummary]="true"
+            validationGroup="animalsData">
+            <dxi-item itemType="group" caption="Animal Species Data">
+                <dxi-item dataField="species">
+                    <dxi-validation-rule 
+                        type="required"
+                        message="Species is required">
+                    </dxi-validation-rule>
+                </dxi-item>
+            </dxi-item>
+            <dxi-item 
+                itemType="button"
+                horizontalAlignment="left"
+                [buttonOptions]="buttonOptions">
+            </dxi-item>
+        </dx-form>
+    </form>
+</div>

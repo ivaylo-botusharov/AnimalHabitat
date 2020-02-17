@@ -6,7 +6,7 @@ namespace AnimalHabitat.Services
 {
     public class DatabaseConfigurationService : IDatabaseConfigurationService
     {
-        public void SeedData(AnimalHabitatContext context, MasterContext masterContext)
+        public void SeedData(EcologyContext context, MasterContext masterContext)
         {
             DatabaseInitializer.SeedData(context, masterContext);
         }

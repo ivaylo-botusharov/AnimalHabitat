@@ -25,14 +25,14 @@ namespace AnimalHabitat.Data
 
             services.AddDbContext<MasterContext>(options => options.UseSqlServer(appData.MasterDbConnectionString));
 
-            services.AddDbContext<AnimalHabitatContext>(options =>
+            services.AddDbContext<EcologyContext>(options =>
                 options.UseSqlServer(appData.AnimalHabitatDbConnectionString));
 
             var serviceProvider = services.BuildServiceProvider();
 
             try
             {
-                var northwindContext = serviceProvider.GetService<AnimalHabitatContext>();
+                var northwindContext = serviceProvider.GetService<EcologyContext>();
                 var masterContext = serviceProvider.GetService<MasterContext>();
 
                 DatabaseInitializer.SeedData(northwindContext, masterContext);

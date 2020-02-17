@@ -10,9 +10,9 @@ namespace AnimalHabitat.Data.Repositories
     {
         protected readonly DbSet<T> DbSet;
 
-        private readonly AnimalHabitatContext context;
+        private readonly EcologyContext context;
 
-        public GenericRepository(AnimalHabitatContext context)
+        public GenericRepository(EcologyContext context)
         {
             this.context = context ??
                 throw new ArgumentException("An instance of DbContext is required to use this repository.", "context");

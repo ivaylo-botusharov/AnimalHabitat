@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
-import { ProfileComponent } from './pages/profile/profile.component';
+import { AnimalsComponent } from './pages/animals/animals.component';
 import { DisplayDataComponent } from './pages/display-data/display-data.component';
 import {
   DxDataGridModule,
@@ -26,8 +26,8 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'profile',
-    component: ProfileComponent,
+    path: 'animals',
+    component: AnimalsComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -58,6 +58,6 @@ const routes: Routes = [
   ],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, DisplayDataComponent, ChartsComponent]
+  declarations: [HomeComponent, AnimalsComponent, DisplayDataComponent, ChartsComponent]
 })
 export class AppRoutingModule { }

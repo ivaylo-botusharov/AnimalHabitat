@@ -4,6 +4,6 @@ namespace AnimalHabitat.ServiceContracts
 {
     public interface IDatabaseConfigurationService
     {
-        void SeedData(AnimalHabitatContext context, MasterContext masterContext);
+        void SeedData(EcologyContext context, MasterContext masterContext);
     }
 }

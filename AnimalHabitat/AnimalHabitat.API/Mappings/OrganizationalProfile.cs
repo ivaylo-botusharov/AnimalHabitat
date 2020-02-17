@@ -8,11 +8,25 @@ namespace AnimalHabitat.API.Mappings
     {
         public OrganizationalProfile()
         {
-            this.CreateMap<Animal, AnimalViewModel>()
+            this.CreateMap<SpeciesDistribution, SpeciesDistributionViewModel>()
                 .ForMember(
                     dest =>
-                    dest.ContinentalHabitat,
-                    opt => opt.MapFrom(src => src.Continent.Name));
+                    dest.Realm,
+                    opt => opt.MapFrom(src => src.EcoregionCountry.Ecoregion.RealmBiome.Realm.Name))
+                .ForMember(
+                    dest =>
+                    dest.Biome,
+                    opt => opt.MapFrom(src => src.EcoregionCountry.Ecoregion.RealmBiome.Biome.Name))
+                .ForMember(
+                    dest =>
+                    dest.Ecoregion,
+                    opt => opt.MapFrom(src => src.EcoregionCountry.Ecoregion.Name))
+                .ForMember(
+                    dest =>
+                    dest.Country,
+                    opt => opt.MapFrom(src => src.EcoregionCountry.Country.Name));
+
+            this.CreateMap<SpeciesDistributionPostModel, SpeciesDistribution>();
         }
     }
 }

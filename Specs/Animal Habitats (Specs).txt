@@ -1,0 +1,333 @@
+Biome
+https://en.wikipedia.org/wiki/Biome
+
+https://www.nationalgeographic.org/encyclopedia/biome/
+
+Habitat
+https://en.wikipedia.org/wiki/Habitat
+
+https://www.nationalgeographic.org/encyclopedia/habitat/
+
+Temperate coniferous forest
+https://en.wikipedia.org/wiki/Temperate_coniferous_forest
+
+Temperate broadleaf and mixed forest
+https://en.wikipedia.org/wiki/Temperate_broadleaf_and_mixed_forest
+
+Habitat fragmentation
+https://en.wikipedia.org/wiki/Habitat_fragmentation
+
+Habitat conservation
+https://en.wikipedia.org/wiki/Habitat_conservation
+
+Habitat destruction
+https://en.wikipedia.org/wiki/Habitat_destruction
+
+Homeschool Science Corner ~ Habitat or Biome
+https://elementalblogging.com/homeschool-science-corner-habitat-vs-biome/
+
+How does a biome differ from a habitat?
+https://socratic.org/questions/how-does-a-biome-differ-from-a-habitat-1
+
+Understanding Habitats, Ecosystems and Biomes 
+http://www.wildernessclassroom.com/understanding-habitats-ecosystems-biomes/
+
+What is the difference between a biome and an ecozone?
+https://www.quora.com/What-is-the-difference-between-a-biome-and-an-ecozone
+
+What is the difference between a biome and an ecosystem?
+https://www.quora.com/What-is-the-difference-between-a-biome-and-an-ecosystem
+
+Chapter 8 ~ Biomes and Ecozones
+https://digitaleditions.library.dal.ca/environmentalscience/chapter/chapter-8-biomes-and-ecozones/
+
+Habitats, Biomes & Eco-Regions
+https://enviroliteracy.org/ecosystems/habitats-biomes-eco-regions/
+
+Animal studies
+https://en.wikipedia.org/wiki/Animal_studies
+
+Biogeography
+https://en.wikipedia.org/wiki/Biogeography
+
+Animal geography
+https://en.wikipedia.org/wiki/Animal_geography
+
+Zoogeography
+https://en.wikipedia.org/wiki/Zoogeography
+
+Bioregion
+https://en.wikipedia.org/wiki/Bioregion
+
+Ecological land classification
+https://en.wikipedia.org/wiki/Ecological_land_classification
+
+Biogeographic realm
+https://en.wikipedia.org/wiki/Biogeographic_realm
+
+Ecozone
+https://simple.wikipedia.org/wiki/Ecozone
+
+Nearctic realm
+https://en.wikipedia.org/wiki/Nearctic_realm
+
+Palearctic realm
+https://en.wikipedia.org/wiki/Palearctic_realm
+
+Afrotropical realm
+https://en.wikipedia.org/wiki/Afrotropical_realm
+
+Antarctic realm
+https://en.wikipedia.org/wiki/Antarctic_realm
+
+Oceanian realm
+https://en.wikipedia.org/wiki/Oceanian_realm
+
+Neotropical realm
+https://en.wikipedia.org/wiki/Neotropical_realm
+
+Australasian realm
+https://en.wikipedia.org/wiki/Australasian_realm
+
+Indomalayan realm
+https://en.wikipedia.org/wiki/Indomalayan_realm
+
+
+Ecoprovince
+https://en.wikipedia.org/wiki/Ecoprovince
+
+Ecoregion
+https://en.wikipedia.org/wiki/Ecoregion
+
+Lists of ecoregions
+https://en.wikipedia.org/wiki/Lists_of_ecoregions
+
+List of ecoregions (WWF)
+https://en.wikipedia.org/wiki/List_of_ecoregions_(WWF)
+
+List of terrestrial ecoregions (WWF)
+https://en.wikipedia.org/wiki/List_of_terrestrial_ecoregions_(WWF)
+
+List of marine ecoregions
+https://en.wikipedia.org/wiki/List_of_marine_ecoregions
+
+List of freshwater ecoregions (WWF)
+https://en.wikipedia.org/wiki/List_of_freshwater_ecoregions_(WWF)
+
+Global 200
+https://en.wikipedia.org/wiki/Global_200
+
+Global 200
+https://www.worldwildlife.org/publications/global-200
+
+Ecotope
+https://en.wikipedia.org/wiki/Ecotope
+
+Ecosystem
+https://en.wikipedia.org/wiki/Ecosystem
+
+Category:Ecology terminology
+https://en.wikipedia.org/wiki/Category:Ecology_terminology
+
+World Wide Fund for Nature
+https://en.wikipedia.org/wiki/World_Wide_Fund_for_Nature
+
+ECOREGIONS
+https://www.worldwildlife.org/biomes
+
+TERRESTRIAL ECOREGIONS (14 Major Habitat Types)
+https://www.worldwildlife.org/biome-categories/terrestrial-ecoregions
+
+
+
+Terrestrial Ecoregions of the World
+https://www.worldwildlife.org/publications/terrestrial-ecoregions-of-the-world
+
+Terrestrial Ecoregions World
+https://globil-panda.opendata.arcgis.com/datasets/terrestrial-ecoregions-world
+
+Conservation Science Data and Tools
+https://www.worldwildlife.org/pages/conservation-science-data-and-tools
+
+ArcGIS REST Services Directory
+https://www.globildata.org/arcgis/rest/services/Global
+
+ArcGIS REST API
+http://www.globildata.org/arcgis/sdk/rest/
+
+Folder: Global
+https://www.globildata.org/arcgis/rest/services/Global
+
+https://www.globildata.org/arcgis/rest/services/Global/Terrestrial_Ecoregions_World/MapServer/0/query?outFields=*&where=1%3D1
+
+Global/Terrestrial_Ecoregions_World (MapServer)
+https://www.globildata.org/arcgis/rest/services/Global/Terrestrial_Ecoregions_World/MapServer
+
+ArcGIS JavaScript API: Global/Terrestrial_Ecoregions_World (MapServer)
+https://www.globildata.org/arcgis/rest/services/Global/Terrestrial_Ecoregions_World/MapServer?f=jsapi
+
+ArcGIS API for JavaScript
+https://developers.arcgis.com/javascript/
+
+https://www.globildata.org/arcgis/rest/services/Global/Terrestrial_Ecoregions_World/MapServer/0/query?outFields=*&where=1%3D1
+
+https://www.globildata.org/arcgis/rest/services/Global/Terrestrial_Ecoregions_World/MapServer/0/query?where=1%3D1&text=ECO_NAME&objectIds=&time=&geometry=&geometryType=esriGeometryEnvelope&inSR=&spatialRel=esriSpatialRelIntersects&relationParam=&outFields=*&returnGeometry=false&returnTrueCurves=false&maxAllowableOffset=&geometryPrecision=&outSR=&having=&returnIdsOnly=false&returnCountOnly=false&orderByFields=&groupByFieldsForStatistics=&outStatistics=&returnZ=false&returnM=false&gdbVersion=&historicMoment=&returnDistinctValues=true&resultOffset=&resultRecordCount=&queryByDistance=&returnExtentOnly=false&datumTransformation=&parameterValues=&rangeValues=&quantizationParameters=&featureEncoding=esriDefault&f=html
+
+
+ArcGIS Online Map Viewer - Terrestrial_Ecoregions_World (MapServer)
+http://www.arcgis.com/home/webmap/viewer.html?url=http%3A%2F%2Fwww.globildata.org%2Farcgis%2Frest%2Fservices%2FGlobal%2FTerrestrial_Ecoregions_World%2FMapServer&source=sd
+
+Global/WWF_Global_200_Ecoregions_WM (MapServer)
+http://www.globildata.org/arcgis/rest/services/Global/WWF_Global_200_Ecoregions_WM/MapServer
+
+Global/WWF_Priority_35_Ecoregions (MapServer)
+https://www.globildata.org/arcgis/rest/services/Global/WWF_Priority_35_Ecoregions/MapServer
+
+Query: WWF Priority 35 Ecoregions (ID: 0)
+https://www.globildata.org/arcgis/rest/services/Global/WWF_Priority_35_Ecoregions/MapServer/0/query
+
+
+Phytogeography
+https://en.wikipedia.org/wiki/Phytogeography
+
+Phytochorion
+https://en.wikipedia.org/wiki/Phytochorion
+
+Vegetation
+https://en.wikipedia.org/wiki/Vegetation
+
+Altitudinal zonation
+https://en.wikipedia.org/wiki/Altitudinal_zonation
+
+Life zone
+https://en.wikipedia.org/wiki/Life_zone
+
+List of life zones by region
+https://en.wikipedia.org/wiki/List_of_life_zones_by_region
+
+Holdridge life zones
+https://en.wikipedia.org/wiki/Holdridge_life_zones
+
+Life zones of central Europe
+https://en.wikipedia.org/wiki/Life_zones_of_central_Europe
+
+Life zones of the Mediterranean region
+https://en.wikipedia.org/wiki/Life_zones_of_the_Mediterranean_region
+
+Life zones of Peru
+https://en.wikipedia.org/wiki/Life_zones_of_Peru
+
+Latitude
+https://en.wikipedia.org/wiki/Latitude
+
+Ecoregion
+https://en.wikipedia.org/wiki/Ecoregion
+
+Endemism
+https://en.wikipedia.org/wiki/Endemism
+
+Cosmopolitan distribution
+https://en.wikipedia.org/wiki/Cosmopolitan_distribution
+
+Taxon
+https://en.wikipedia.org/wiki/Taxon
+
+Ecotone
+https://en.wikipedia.org/wiki/Ecotone
+
+Köppen climate classification
+https://en.wikipedia.org/wiki/K%C3%B6ppen_climate_classification
+
+---------------------
+
+Habitats and ecosystems
+https://www.dkfindout.com/us/animals-and-nature/habitats-and-ecosystems/
+
+Land habitats
+https://www.dkfindout.com/us/animals-and-nature/habitats-and-ecosystems/land-habitats/
+
+Different areas of the world are home to different types of habitat. Hot, dry areas, for example, are often covered in hot deserts. Warm, wet regions may give rise to tropical rain forests. There are 10 main types of land habitat on Earth. Each of these 10 types comes in many varieties, depending on where in the world it is found. The animals and plants that live in each habitat are adapted to cope with the conditions around them.
+
+Many habitats are lost or destroyed by human activity: 98 percent  of the wild  (grassland) in North America  has been turned into  farmland
+
+Types of land habitats on Earth (10 types):
+
+Coniferous forest
+Coniferous forests are often found in cool areas in the Northern Hemisphere, such as Canada, Alaska, Scandinavia, and parts of Russia. They are dominated by evergreen fir trees, and are home to animals such as moose (elk), beavers, and wolves.
+
+Mountain
+The tops of high mountain ranges are extremely cold, and few plants grow there. Animals living in these high places must cope with cold, lack of food, and steep, rocky terrain.
+
+Deciduous forest
+In cool, moist regions, many trees grow quickly in the summer but lose their leaves in winter. Wildlife in these areas changes with the seasons, as many animals move to other areas or hide away to sleep during the winter.
+
+Temperate grassland
+Dry, grassy prairies and steppes have hot summers and cold winters. They support herds of grazing animals such as antelope and bison.
+
+Mediterranean
+The lands around the Mediterranean Sea are hot, but have more rainfall than desert areas. They are home to shrubs and plants that can survive with only a little water, and are often filled with insect life.
+
+Tundra
+Tundras are frozen solid for most of the year, but thaw out a little during spring and summer. Animals such as reindeer and nesting birds make their homes here.
+
+Hot desert
+Deserts are dry places where little plant life can grow. Hot deserts may be barren areas of rock and sand, but some support animals and plants that can cope with very little water.
+
+Tropical rain forest
+These green, lush forests grow near the Equator (an imaginary line around the middle of the Earth). They are the richest of all biomes, home to more kinds of animals and plants than any other habitat.
+
+Polar ice
+Cold regions near the North and South Poles are covered in ice and snow. Some animals, such as penguins, seals, and polar bears, live on the edges of the ice, hunting for food in the freezing oceans.
+
+Savanna
+These tropical grasslands are found in Africa. They have long dry periods followed by wet seasons with heavy rainfall. They are home to huge herds of grass-eating animals, and powerful predators that feed on them.
+
+------------------------------------------
+
+Habitats
+Learn about the different natural environments of plants and animals.
+From the depths of the ocean to the top of the highest mountain, habitats are places where plants and animals live. Learn about these unique regions of our planet.
+
+https://kids.nationalgeographic.com/explore/nature/habitats/
+
+
+Grassland Habitat
+
+Polar Habitat
+
+Desert Habitat
+
+Mountain Habitat
+
+Temperate Forest Habitat
+
+Freshwater Habitat
+
+Ocean Habitat
+
+Rainforest Habitat
+
+--------------------------------------------------
+
+Earth Habitats
+https://www.nationalgeographic.com/environment/earth-habitats/
+
+Valleys
+
+Caves
+
+Oceans
+
+Grasslands
+
+Rainforests
+
+Tundra
+
+Deserts
+
+-----------------------
+
+Animal Behavior Desk Reference: A Dictionary of Animal Behavior, Ecology, and Evolution, Third Edition 3rd Edition
+https://www.amazon.com/Animal-Behavior-Desk-Reference-Dictionary/dp/1439836515/
+

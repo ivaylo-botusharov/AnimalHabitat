@@ -12,7 +12,7 @@ namespace AnimalHabitat.Data.Seed
 {
     public static class DatabaseInitializer
     {  
-        public static void SeedData(AnimalHabitatContext animalHabitatContext, MasterContext masterContext)
+        public static void SeedData(EcologyContext animalHabitatContext, MasterContext masterContext)
         {
             bool databaseExists = (animalHabitatContext.GetService<IDatabaseCreator>() as RelationalDatabaseCreator).Exists();
 

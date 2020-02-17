@@ -1,0 +1,110 @@
+https://en.wikipedia.org/wiki/List_of_terrestrial_ecoregions_(WWF)
+
+Database Name: Biogeography / Ecology
+
+Tables:
+
+----------------
+
+Realm
+
+Id
+
+Name
+
+Description
+
+----------------
+
+Biome
+
+Id
+
+Name
+
+Description
+
+-----------------
+
+RealmBiome - Junction table
+
+Realm and Biome - many-to-many relationship
+
+Id: Primary key is composite key of - RealmId and BiomeId
+
+RealmId (FK), BiomeId (FK)
+
+-------------------
+
+Ecoregion
+
+Id
+
+Name
+
+Description
+
+RealmBiomeId (FK)
+
+
+--------------------
+
+Country
+
+Id
+
+Name
+
+--------------------
+
+EcoregionCountry - Junction table
+
+Id - composite key of EcoregionId and CountryId
+
+EcoregionId (FK)
+
+CountryId (FK)
+
+----------------------
+
+Species
+
+Id
+
+CommonName
+
+ScientificName
+
+Description
+
+---------------------
+
+SpeciesDistribution
+
+Id - Composite key from: SpeciesId, EcoregionCountryId  / PRIMARY KEY NONCLUSTERED
+
+SpeciesID
+
+EcoregionCountryId
+
+Population
+
+Description
+
+-----------------------------
+
+DataTable (dxDataTable - ViewModel):
+
+Id
+
+Species
+
+Population
+
+Country
+
+Ecoregion
+
+Biome
+
+Realm

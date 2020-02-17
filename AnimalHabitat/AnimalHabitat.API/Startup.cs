@@ -72,9 +72,8 @@ namespace AnimalHabitat.API
         private static IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<AnimalViewModel>("AnimalViewModels");
-            odataBuilder.EntitySet<Animal>("Animals");
-            odataBuilder.EntitySet<Continent>("Continent");
+            odataBuilder.EntitySet<SpeciesDistributionViewModel>("SpeciesDistributionViewModels");
+            odataBuilder.EntitySet<SpeciesDistribution>("SpeciesDistributions");
 
             return odataBuilder.GetEdmModel();
         }

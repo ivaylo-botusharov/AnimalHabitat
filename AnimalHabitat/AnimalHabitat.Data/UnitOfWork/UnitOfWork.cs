@@ -6,40 +6,25 @@ namespace AnimalHabitat.Data.UnitOfWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private IAnimalRepository animalRepository;
+        private ISpeciesDistributionRepository speciesDistributionRepository;
 
-        private IContinentRepository continentRepository;
-
-        public UnitOfWork(AnimalHabitatContext context)
+        public UnitOfWork(EcologyContext context)
         {
             this.Context = context;
         }
 
-        public AnimalHabitatContext Context { get; }
+        public EcologyContext Context { get; }
 
-        public IAnimalRepository AnimalRepository
+        public ISpeciesDistributionRepository SpeciesDistributionRepository
         {
             get
             {
-                if (this.animalRepository == null)
+                if (this.speciesDistributionRepository == null)
                 {
-                    this.animalRepository = new AnimalRepository(this.Context);
+                    this.speciesDistributionRepository = new SpeciesDistributionRepository(this.Context);
                 }
 
-                return animalRepository;
-            }
-        }
-
-        public IContinentRepository ContinentRepository
-        {
-            get
-            {
-                if (this.continentRepository == null)
-                {
-                    this.continentRepository = new ContinentRepository(this.Context);
-                }
-
-                return continentRepository;
+                return speciesDistributionRepository;
             }
         }
 

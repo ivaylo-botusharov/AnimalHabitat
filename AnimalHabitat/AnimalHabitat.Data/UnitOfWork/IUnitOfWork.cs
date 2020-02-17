@@ -5,10 +5,9 @@ namespace AnimalHabitat.Data.UnitOfWork
 {
     public interface IUnitOfWork
     {
-        AnimalHabitatContext Context { get; }
+        EcologyContext Context { get; }
 
-        IAnimalRepository AnimalRepository { get; }
-
-        IContinentRepository ContinentRepository { get; }
+        ISpeciesDistributionRepository SpeciesDistributionRepository { get; }
     }
 }
+
