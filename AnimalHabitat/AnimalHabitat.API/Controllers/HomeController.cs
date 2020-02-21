@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AnimalHabitat.ServiceContracts;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AnimalHabitat.API.Controllers
 {
@@ -6,9 +7,18 @@ namespace AnimalHabitat.API.Controllers
     [ApiController]
     public class HomeController : ControllerBase
     {
+        private readonly ISpeciesDistributionService speciesDistributionService;
+
+        public HomeController(ISpeciesDistributionService speciesDistributionService)
+        {
+            this.speciesDistributionService = speciesDistributionService;
+        }
+
         public IActionResult Get()
         {
-            return this.Ok("The application has started...");
+            var speciesDistributions = this.speciesDistributionService.GetSpeciesDistributions();
+
+            return this.Ok(speciesDistributions);
         }
     }
 }
