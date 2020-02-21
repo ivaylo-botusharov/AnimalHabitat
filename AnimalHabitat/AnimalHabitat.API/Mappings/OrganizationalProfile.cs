@@ -11,6 +11,10 @@ namespace AnimalHabitat.API.Mappings
             this.CreateMap<SpeciesDistribution, SpeciesDistributionViewModel>()
                 .ForMember(
                     dest =>
+                    dest.Species,
+                    opt => opt.MapFrom(src => src.Species.CommonName))
+                .ForMember(
+                    dest =>
                     dest.Realm,
                     opt => opt.MapFrom(src => src.EcoregionCountry.Ecoregion.RealmBiome.Realm.Name))
                 .ForMember(
