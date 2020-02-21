@@ -1,7 +1,7 @@
 ﻿using AnimalHabitat.ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AnimalHabitat.API.Controllers
+namespace Ecology.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

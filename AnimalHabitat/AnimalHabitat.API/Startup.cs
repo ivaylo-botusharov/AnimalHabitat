@@ -1,8 +1,8 @@
-using AnimalHabitat.API.Models;
 using AnimalHabitat.Data.Models;
 using AnimalHabitat.DI;
 using AnimalHabitat.DTO;
 using AutoMapper;
+using Ecology.API.Models;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OData.Edm;
 
-namespace AnimalHabitat.API
+namespace Ecology.API
 {
     public class Startup
     {
@@ -72,7 +72,7 @@ namespace AnimalHabitat.API
         private static IEdmModel GetEdmModel()
         {
             var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<SpeciesDistributionViewModel>("SpeciesDistributionViewModels");
+            odataBuilder.EntitySet<SpeciesDistributionViewModel>("SpeciesDistributionViewModel");
             odataBuilder.EntitySet<SpeciesDistribution>("SpeciesDistribution");
 
             return odataBuilder.GetEdmModel();

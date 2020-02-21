@@ -1,12 +1,12 @@
 ﻿using System.Linq;
-using AnimalHabitat.API.Models;
 using AnimalHabitat.Data.Models;
 using AnimalHabitat.ServiceContracts;
 using AutoMapper;
+using Ecology.API.Models;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AnimalHabitat.API.Controllers
+namespace Ecology.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

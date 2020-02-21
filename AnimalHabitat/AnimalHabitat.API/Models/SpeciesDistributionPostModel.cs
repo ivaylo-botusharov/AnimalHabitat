@@ -1,4 +1,4 @@
-﻿namespace AnimalHabitat.API.Models
+﻿namespace Ecology.API.Models
 {
     public class SpeciesDistributionPostModel
     {

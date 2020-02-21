@@ -1,8 +1,8 @@
-﻿using AnimalHabitat.API.Models;
-using AnimalHabitat.Data.Models;
+﻿using AnimalHabitat.Data.Models;
 using AutoMapper;
+using Ecology.API.Models;
 
-namespace AnimalHabitat.API.Mappings
+namespace Ecology.API.Mappings
 {
     public class OrganizationalProfile : Profile
     {
