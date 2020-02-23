@@ -8,6 +8,8 @@ namespace Ecology.Data.UnitOfWork
         EcologyContext Context { get; }
 
         ISpeciesDistributionRepository SpeciesDistributionRepository { get; }
+
+        IRealmRepository RealmRepository { get; }
     }
 }
 

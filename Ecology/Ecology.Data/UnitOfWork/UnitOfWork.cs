@@ -8,6 +8,8 @@ namespace Ecology.Data.UnitOfWork
     {
         private ISpeciesDistributionRepository speciesDistributionRepository;
 
+        private IRealmRepository realmRepository;
+
         public UnitOfWork(EcologyContext context)
         {
             this.Context = context;
@@ -24,7 +26,20 @@ namespace Ecology.Data.UnitOfWork
                     this.speciesDistributionRepository = new SpeciesDistributionRepository(this.Context);
                 }
 
-                return speciesDistributionRepository;
+                return this.speciesDistributionRepository;
+            }
+        }
+
+        public IRealmRepository RealmRepository
+        {
+            get
+            {
+                if (this.realmRepository == null)
+                {
+                    this.realmRepository = new RealmRepository(this.Context);
+                }
+
+                return this.realmRepository;
             }
         }
 

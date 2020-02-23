@@ -30,7 +30,9 @@ namespace Ecology.DI
         public static void BindRepositories(IServiceCollection services)
         {
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
             services.AddScoped<ISpeciesDistributionRepository, SpeciesDistributionRepository>();
+            services.AddScoped<IRealmRepository, RealmRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
@@ -38,6 +40,8 @@ namespace Ecology.DI
         public static void BindServices(IServiceCollection services)
         {
             services.AddScoped<ISpeciesDistributionService, SpeciesDistributionService>();
+            services.AddScoped<IRealmService, RealmService>();
+
             services.AddScoped<IDatabaseConfigurationService, DatabaseConfigurationService>();
         }
 

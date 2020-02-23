@@ -31,6 +31,8 @@ namespace Ecology.API.Mappings
                     opt => opt.MapFrom(src => src.EcoregionCountry.Country.Name));
 
             this.CreateMap<SpeciesDistributionPostModel, SpeciesDistribution>();
+
+            this.CreateMap<Realm, RealmViewModel>();
         }
     }
 }
