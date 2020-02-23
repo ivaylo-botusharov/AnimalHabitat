@@ -16,9 +16,8 @@ namespace Ecology.API.Controllers
 
         public IActionResult Get()
         {
-            var speciesDistributions = this.speciesDistributionService.GetSpeciesDistributions();
-
-            return this.Ok(speciesDistributions);
+            // var speciesDistributions = this.speciesDistributionService.GetSpeciesDistributions();
+            return this.Ok("The application has started...");
         }
     }
 }
