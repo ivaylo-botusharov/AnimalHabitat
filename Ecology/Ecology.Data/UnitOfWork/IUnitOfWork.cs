@@ -12,6 +12,8 @@ namespace Ecology.Data.UnitOfWork
         IRealmRepository RealmRepository { get; }
 
         IBiomeRepository BiomeRepository { get; }
+
+        IEcoregionRepository EcoregionRepository { get; }
     }
 }
 

@@ -35,6 +35,8 @@ namespace Ecology.API.Mappings
             this.CreateMap<Realm, RealmViewModel>();
 
             this.CreateMap<Biome, BiomeViewModel>();
+
+            this.CreateMap<Ecoregion, EcoregionViewModel>();
         }
     }
 }

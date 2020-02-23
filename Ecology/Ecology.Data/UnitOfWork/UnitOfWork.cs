@@ -12,6 +12,8 @@ namespace Ecology.Data.UnitOfWork
 
         private IBiomeRepository biomeRepository;
 
+        private IEcoregionRepository ecoregionRepository;
+
         public UnitOfWork(EcologyContext context)
         {
             this.Context = context;
@@ -55,6 +57,19 @@ namespace Ecology.Data.UnitOfWork
                 }
 
                 return this.biomeRepository;
+            }
+        }
+
+        public IEcoregionRepository EcoregionRepository
+        {
+            get
+            {
+                if (this.ecoregionRepository == null)
+                {
+                    this.ecoregionRepository = new EcoregionRepository(this.Context);
+                }
+
+                return this.ecoregionRepository;
             }
         }
 
