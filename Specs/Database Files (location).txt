@@ -1,0 +1,12 @@
+﻿%USERPROFILE%\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb
+
+File names:
+
+Ecology.mdf
+
+Ecology.ldf
+
+
+Logger:
+
+error.log
