@@ -1,5 +1,5 @@
-﻿using Ecology.Data.Models;
-using System.Linq;
+﻿using System.Linq;
+using Ecology.Data.Models;
 
 namespace Ecology.Data.Repositories.Contracts
 {

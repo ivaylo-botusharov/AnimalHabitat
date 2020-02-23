@@ -37,6 +37,8 @@ namespace Ecology.API.Mappings
             this.CreateMap<Biome, BiomeViewModel>();
 
             this.CreateMap<Ecoregion, EcoregionViewModel>();
+
+            this.CreateMap<Country, CountryViewModel>();
         }
     }
 }
