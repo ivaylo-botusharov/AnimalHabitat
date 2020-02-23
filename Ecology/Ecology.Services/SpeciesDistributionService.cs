@@ -14,20 +14,18 @@ namespace Ecology.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public SpeciesDistribution GetSpeciesDistributionById(int id)
-        {
-            SpeciesDistribution animal = this.unitOfWork.SpeciesDistributionRepository
-                .All()
-                .FirstOrDefault(a => a.Id == id);
-
-            return animal;
-        }
-
         public IQueryable<SpeciesDistribution> GetSpeciesDistributions()
         {
             IQueryable<SpeciesDistribution> speciesDistributions = this.unitOfWork.SpeciesDistributionRepository.All();
 
             return speciesDistributions;
+        }
+
+        public SpeciesDistribution GetSpeciesDistributionById(int id)
+        {
+            SpeciesDistribution speciesDistribution = this.unitOfWork.SpeciesDistributionRepository.GetById(id);
+
+            return speciesDistribution;
         }
 
         public void AddSpeciesDistribution(SpeciesDistribution speciesDistribution)

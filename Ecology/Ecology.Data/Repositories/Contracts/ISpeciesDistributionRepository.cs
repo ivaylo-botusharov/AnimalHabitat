@@ -5,8 +5,5 @@ namespace Ecology.Data.Repositories.Contracts
 {
     public interface ISpeciesDistributionRepository : IGenericRepository<SpeciesDistribution>
     {
-        SpeciesDistribution GetSpeciesDistributionById(int id);
-
-        IQueryable<SpeciesDistribution> GetSpeciesDistributions();
     }
 }

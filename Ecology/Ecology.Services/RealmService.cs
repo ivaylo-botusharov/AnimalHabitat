@@ -20,5 +20,12 @@ namespace Ecology.Services
 
             return realms;
         }
+
+        public Realm GetRealmById(int id)
+        {
+            Realm realm = this.unitOfWork.RealmRepository.GetById(id);
+
+            return realm;
+        }
     }
 }
