@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
 import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
-import { AnimalsService } from './pages/animals/animals.service';
+import { SpeciesDistributionService } from './pages/species-distribution-form/species-distribution.service';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     LoginFormModule,
     AppRoutingModule
   ],
-  providers: [AuthService, ScreenService, AppInfoService, AnimalsService],
+  providers: [AuthService, ScreenService, AppInfoService, SpeciesDistributionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

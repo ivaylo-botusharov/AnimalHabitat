@@ -2,20 +2,20 @@ import { Component, ViewChild } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 import { DxFormComponent } from 'devextreme-angular';
 
-import { AnimalsService } from './animals.service';
-import { AnimalHabitat } from './animal-habitat';
+import { SpeciesDistributionService } from './species-distribution.service';
+import { SpeciesDistributionPostModel } from './species-distribution-post-model';
 
 @Component({
-  templateUrl: 'animals.component.html',
-  styleUrls: [ './animals.component.scss' ]
+  templateUrl: 'species-distribution-form.component.html',
+  styleUrls: [ './species-distribution-form.component.scss' ]
 })
 
-export class AnimalsComponent {
-  @ViewChild(DxFormComponent, { static: false }) form:DxFormComponent;
+export class SpeciesDistributionFormComponent {
+  @ViewChild(DxFormComponent, { static: false }) form: DxFormComponent;
   animals: any;
   colCountByScreen: object;
 
-  constructor(private animalsService: AnimalsService) {
+  constructor(private speciesDistributionService: SpeciesDistributionService) {
     this.colCountByScreen = {
       xs: 1,
       sm: 2,
@@ -32,7 +32,7 @@ export class AnimalsComponent {
 
   onFormSubmit(e) {
     let formData = this.form.instance.option("formData");
-    this.animalsService.addAnimals(formData).subscribe(result => {
+    this.speciesDistributionService.addAnimals(formData).subscribe(result => {
       notify({
         message: "You have submitted the form",
         position: {

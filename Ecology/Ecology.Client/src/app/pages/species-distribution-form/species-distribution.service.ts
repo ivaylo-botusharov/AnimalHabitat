@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-import { AnimalHabitat } from './animal-habitat';
+import { SpeciesDistributionPostModel } from './species-distribution-post-model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
@@ -15,16 +15,16 @@ const httpOptions = {
 @Injectable({
     providedIn: 'root'
 })
-export class AnimalsService {
+export class SpeciesDistributionService {
 
   private baseUrl = 'https://localhost:44360/'
-  private animalsUrl = this.baseUrl + 'api/' + 'animals';
+  private speciesDistributionUrl = this.baseUrl + 'api/' + 'speciesdistribution';
 
   constructor(private http: HttpClient) {
   }
 
-  addAnimals (animalHabitat: AnimalHabitat): Observable<AnimalHabitat> {
-    return this.http.post<AnimalHabitat>(this.animalsUrl, animalHabitat, httpOptions)
+  addAnimals (speciesDistribution: SpeciesDistributionPostModel): Observable<SpeciesDistributionPostModel> {
+    return this.http.post<SpeciesDistributionPostModel>(this.speciesDistributionUrl, speciesDistribution, httpOptions)
       .pipe(
         catchError(this.handleError)
       );

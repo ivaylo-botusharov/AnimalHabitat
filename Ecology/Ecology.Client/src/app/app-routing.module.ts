@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
-import { AnimalsComponent } from './pages/animals/animals.component';
-import { DisplayDataComponent } from './pages/display-data/display-data.component';
+import { SpeciesDistributionFormComponent } from './pages/species-distribution-form/species-distribution-form.component';
+import { SpeciesDistributionComponent } from './pages/species-distribution/species-distribution.component';
 import {
   DxDataGridModule,
   DxFormModule,
@@ -21,13 +21,13 @@ const routes: Routes = [
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'display-data',
-    component: DisplayDataComponent,
+    path: 'species-distribution',
+    component: SpeciesDistributionComponent,
     canActivate: [ AuthGuardService ]
   },
   {
-    path: 'animals',
-    component: AnimalsComponent,
+    path: 'create-distribution',
+    component: SpeciesDistributionFormComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -58,6 +58,10 @@ const routes: Routes = [
   ],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, AnimalsComponent, DisplayDataComponent, ChartsComponent]
+  declarations: [
+    HomeComponent,
+    SpeciesDistributionFormComponent,
+    SpeciesDistributionComponent,
+    ChartsComponent]
 })
 export class AppRoutingModule { }

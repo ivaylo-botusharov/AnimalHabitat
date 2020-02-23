@@ -9,12 +9,12 @@ export const navigation = [
     icon: 'folder',
     items: [
       {
-        text: 'Animals',
-        path: '/animals'
+        text: 'Create Distribution',
+        path: '/create-distribution'
       },
       {
-        text: 'Display Data',
-        path: '/display-data'
+        text: 'Species Distribution',
+        path: '/species-distribution'
       }
     ]
   },
