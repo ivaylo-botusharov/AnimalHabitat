@@ -1,0 +1,6 @@
+{
+  "AppData": {
+    "EcologyConnectionString": "Server=(localdb)\\mssqllocaldb;Database=Ecology;Trusted_Connection=True;MultipleActiveResultSets=true",
+    "MasterDbConnectionString": "Server=(localdb)\\mssqllocaldb;Database=master;Trusted_Connection=True;MultipleActiveResultSets=true"
+  }
+}
