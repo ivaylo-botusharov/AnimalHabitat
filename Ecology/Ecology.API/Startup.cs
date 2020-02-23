@@ -74,6 +74,7 @@ namespace Ecology.API
             var odataBuilder = new ODataConventionModelBuilder();
             odataBuilder.EntitySet<SpeciesDistributionViewModel>("SpeciesDistributionViewModel");
             odataBuilder.EntitySet<SpeciesDistribution>("SpeciesDistribution");
+            //odataBuilder.EntitySet<Species>("Species");
 
             return odataBuilder.GetEdmModel();
         }

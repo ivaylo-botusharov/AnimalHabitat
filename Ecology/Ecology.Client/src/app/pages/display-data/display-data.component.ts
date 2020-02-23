@@ -15,13 +15,16 @@ export class DisplayDataComponent {
         type: 'odata',
         version: 4,
         key: 'Id',
-        url: 'https://localhost:44360/odata/animals'
+        url: 'https://localhost:44360/odata/speciesdistribution'
       },
       select: [
         'Id',
         'Species',
-        'ContinentalHabitat',
-        'Count'
+        'Population',
+        'Country',
+        'Ecoregion',
+        'Biome',
+        'Realm'
       ]
     };
   }

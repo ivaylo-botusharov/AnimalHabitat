@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Ecology.API.Models;
 using Ecology.Data.Models;
@@ -23,10 +24,10 @@ namespace Ecology.API.Controllers
 
         [HttpGet]
         [EnableQuery]
-        public IQueryable<SpeciesDistributionViewModel> Get()
+        public IList<SpeciesDistributionViewModel> Get()
         {
-            IQueryable<SpeciesDistributionViewModel> speciesDistributions = this.mapper
-                .ProjectTo<SpeciesDistributionViewModel>(this.speciesDistributionService.GetSpeciesDistributions());
+            IList<SpeciesDistributionViewModel> speciesDistributions = this.mapper
+                .ProjectTo<SpeciesDistributionViewModel>(this.speciesDistributionService.GetSpeciesDistributions()).ToList();
 
             return speciesDistributions;
         }
