@@ -33,6 +33,8 @@ namespace Ecology.API.Mappings
             this.CreateMap<SpeciesDistributionPostModel, SpeciesDistribution>();
 
             this.CreateMap<Realm, RealmViewModel>();
+
+            this.CreateMap<Biome, BiomeViewModel>();
         }
     }
 }

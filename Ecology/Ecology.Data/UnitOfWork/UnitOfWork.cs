@@ -10,6 +10,8 @@ namespace Ecology.Data.UnitOfWork
 
         private IRealmRepository realmRepository;
 
+        private IBiomeRepository biomeRepository;
+
         public UnitOfWork(EcologyContext context)
         {
             this.Context = context;
@@ -40,6 +42,19 @@ namespace Ecology.Data.UnitOfWork
                 }
 
                 return this.realmRepository;
+            }
+        }
+
+        public IBiomeRepository BiomeRepository
+        {
+            get
+            {
+                if (this.biomeRepository == null)
+                {
+                    this.biomeRepository = new BiomeRepository(this.Context);
+                }
+
+                return this.biomeRepository;
             }
         }
 

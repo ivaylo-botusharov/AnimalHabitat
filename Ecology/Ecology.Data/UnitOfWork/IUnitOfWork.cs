@@ -10,6 +10,8 @@ namespace Ecology.Data.UnitOfWork
         ISpeciesDistributionRepository SpeciesDistributionRepository { get; }
 
         IRealmRepository RealmRepository { get; }
+
+        IBiomeRepository BiomeRepository { get; }
     }
 }
 
