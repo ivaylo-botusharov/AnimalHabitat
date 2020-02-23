@@ -5,6 +5,6 @@ export class AppInfoService {
   constructor() {}
 
   public get title() {
-    return 'Animal Habitat';
+    return 'Ecology';
   }
 }
