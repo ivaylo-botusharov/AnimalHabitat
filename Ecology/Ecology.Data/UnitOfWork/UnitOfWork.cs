@@ -16,6 +16,8 @@ namespace Ecology.Data.UnitOfWork
 
         private ICountryRepository countryRepository;
 
+        private ISpeciesRepository speciesRepository;
+
         public UnitOfWork(EcologyContext context)
         {
             this.Context = context;
@@ -85,6 +87,19 @@ namespace Ecology.Data.UnitOfWork
                 }
 
                 return this.countryRepository;
+            }
+        }
+
+        public ISpeciesRepository SpeciesRepository
+        {
+            get
+            {
+                if (this.speciesRepository == null)
+                {
+                    this.speciesRepository = new SpeciesRepository(this.Context);
+                }
+
+                return this.speciesRepository;
             }
         }
 

@@ -39,6 +39,12 @@ namespace Ecology.API.Mappings
             this.CreateMap<Ecoregion, EcoregionViewModel>();
 
             this.CreateMap<Country, CountryViewModel>();
+
+            this.CreateMap<Species, SpeciesViewModel>()
+                .ForMember(
+                    dest =>
+                    dest.Name,
+                    opt => opt.MapFrom(src => src.CommonName));
         }
     }
 }

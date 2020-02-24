@@ -3,6 +3,7 @@ import notify from 'devextreme/ui/notify';
 import { DxFormComponent } from 'devextreme-angular';
 import ArrayStore from "devextreme/data/array_store";
 import DataSource from "devextreme/data/data_source";
+import CustomStore from "devextreme/data/custom_store";
 
 import { SpeciesDistributionService } from './species-distribution.service';
 import { SpeciesDistributionPostModel } from './species-distribution-post-model';
@@ -33,10 +34,13 @@ export class SpeciesDistributionFormComponent {
     };
 
     this.speciesDataSource = new DataSource({
-      store: new ArrayStore({
+      store: new CustomStore({
           key: "id",
-          data: this.speciesArr,
-      }),
+          loadMode: "raw",
+          load: () => {
+              return this.speciesDistributionService.getSpecies().toPromise();
+          }
+      })
     });
   }
 
@@ -52,7 +56,7 @@ export class SpeciesDistributionFormComponent {
 
   onFormSubmit(e) {
     let formData = this.form.instance.option("formData");
-    this.speciesDistributionService.addAnimals(formData).subscribe(result => {
+    this.speciesDistributionService.addSpeciesDistribution(formData).subscribe(result => {
       notify({
         message: "You have submitted the form",
         position: {

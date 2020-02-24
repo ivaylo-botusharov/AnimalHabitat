@@ -36,6 +36,7 @@ namespace Ecology.DI
             services.AddScoped<IBiomeRepository, BiomeRepository>();
             services.AddScoped<IEcoregionRepository, EcoregionRepository>();
             services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<ISpeciesRepository, SpeciesRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
@@ -47,6 +48,7 @@ namespace Ecology.DI
             services.AddScoped<IBiomeService, BiomeService>();
             services.AddScoped<IEcoregionService, EcoregionService>();
             services.AddScoped<ICountryService, CountryService>();
+            services.AddScoped<ISpeciesService, SpeciesService>();
 
             services.AddScoped<IDatabaseConfigurationService, DatabaseConfigurationService>();
         }

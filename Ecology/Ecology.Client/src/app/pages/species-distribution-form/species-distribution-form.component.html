@@ -8,15 +8,24 @@
             [showValidationSummary]="true"
             validationGroup="animalsData">
             <dxi-item itemType="group" caption="Species Distribution Data">
-                <dxi-item dataField="population">
+                <dxi-item dataField="population" editorType="dxNumberBox" [editorOptions]="{min: '1', showSpinButtons: 'true'}">
                     <dxi-validation-rule 
                         type="required"
                         message="Population is required!">
+                    </dxi-validation-rule>
+                    <dxi-validation-rule 
+                        type="range"
+                        [min]="1"
+                        message="Population should be positive number!">
                     </dxi-validation-rule>
                 </dxi-item>
             </dxi-item>
             <dxi-item dataField="speciesId" editorType="dxSelectBox" [editorOptions]="{dataSource: speciesDataSource, displayExpr: 'name', valueExpr: 'id'}">
                 <dxo-label text="Species"></dxo-label>
+                <dxi-validation-rule 
+                    type="required"
+                    message="Species should be selected!">
+                </dxi-validation-rule>
             </dxi-item>
             <dxi-item 
                 itemType="button"
