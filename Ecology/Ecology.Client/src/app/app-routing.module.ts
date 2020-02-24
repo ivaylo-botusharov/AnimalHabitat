@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SpeciesDistributionFormComponent } from './pages/species-distribution-form/species-distribution-form.component';
 import { SpeciesDistributionComponent } from './pages/species-distribution/species-distribution.component';
 import {
+  DxSelectBoxModule,
   DxDataGridModule,
   DxFormModule,
   DxButtonModule,
@@ -50,6 +51,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
+    DxSelectBoxModule,
     DxDataGridModule,
     DxFormModule,
     DxButtonModule,

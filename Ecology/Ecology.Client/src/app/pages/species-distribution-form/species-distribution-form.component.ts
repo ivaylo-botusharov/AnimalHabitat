@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import notify from 'devextreme/ui/notify';
 import { DxFormComponent } from 'devextreme-angular';
+import ArrayStore from "devextreme/data/array_store";
+import DataSource from "devextreme/data/data_source";
 
 import { SpeciesDistributionService } from './species-distribution.service';
 import { SpeciesDistributionPostModel } from './species-distribution-post-model';
@@ -12,8 +14,15 @@ import { SpeciesDistributionPostModel } from './species-distribution-post-model'
 
 export class SpeciesDistributionFormComponent {
   @ViewChild(DxFormComponent, { static: false }) form: DxFormComponent;
-  animals: any;
   colCountByScreen: object;
+
+  selectedSpecies: any;
+  speciesDataSource: DataSource;
+  speciesArr = [
+    { id: 1, name: "Monkey" },
+    { id: 2, name: "Hourse" },
+    { id: 3, name: "Elephant" }
+  ];
 
   constructor(private speciesDistributionService: SpeciesDistributionService) {
     this.colCountByScreen = {
@@ -22,12 +31,23 @@ export class SpeciesDistributionFormComponent {
       md: 3,
       lg: 4
     };
+
+    this.speciesDataSource = new DataSource({
+      store: new ArrayStore({
+          key: "id",
+          data: this.speciesArr,
+      }),
+    });
   }
 
   buttonOptions: any = {
-    text: "Register",
+    text: "Submit",
     type: "success",
     useSubmitBehavior: true
+  }
+
+  onSpeciesSelectionChange(e) {
+    console.log('species selection has changed...');
   }
 
   onFormSubmit(e) {
