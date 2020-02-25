@@ -10,8 +10,7 @@ import { Ecoregion } from './ecoregion.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    'Content-Type':  'application/json'
   })
 };
 
@@ -20,7 +19,7 @@ const httpOptions = {
 })
 export class SpeciesDistributionService {
 
-  private baseUrl = 'https://localhost:44360/'
+  private baseUrl = 'https://localhost:44360/';
   private speciesDistributionUrl = this.baseUrl + 'api/' + 'speciesdistribution';
   private speciesUrl = this.baseUrl + 'api/' + 'species';
   private ecoregionUrl = this.baseUrl + 'api/' + 'ecoregion';
@@ -48,7 +47,7 @@ export class SpeciesDistributionService {
         catchError(this.handleError)
       ).toPromise();
   }
-  
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
@@ -59,5 +58,5 @@ export class SpeciesDistributionService {
     }
     return throwError(
       'Something bad happened; please try again later.');
-  };
+  }
 }
