@@ -21,6 +21,7 @@ export class SpeciesDistributionFormComponent {
   private baseUrl = 'https://localhost:44360/'
   countriesUrl = this.baseUrl + 'api/' + 'country';
   ecoregionsUrl = this.baseUrl + 'api/' + 'ecoregion';
+  ecoregionSelectBoxDisabled: boolean = true;
 
   constructor(private speciesDistributionService: SpeciesDistributionService) {
     this.colCountByScreen = {
@@ -51,6 +52,7 @@ export class SpeciesDistributionFormComponent {
     let countryId = event.value;
     this.speciesDistributionService.getEcoregions(countryId).then((ecoregions) => {
       this.ecoregions = ecoregions;
+      this.ecoregionSelectBoxDisabled = false; 
     });
   }
 
