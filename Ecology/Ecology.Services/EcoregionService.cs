@@ -28,5 +28,13 @@ namespace Ecology.Services
 
             return filteredEcoregions;
         }
+
+        public IQueryable<Ecoregion> GetEcoregionsByCountryId(int countryId)
+        {
+            IQueryable<Ecoregion> filteredEcoregions = this.unitOfWork.EcoregionRepository
+                .GetEcoregionsByCountryId(countryId);
+
+            return filteredEcoregions;
+        }
     }
 }

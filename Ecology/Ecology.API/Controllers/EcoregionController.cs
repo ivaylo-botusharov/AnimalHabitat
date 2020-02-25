@@ -36,5 +36,15 @@ namespace Ecology.API.Controllers
 
             return this.Ok(filteredEcoregions);
         }
+
+        // GET: api/ecoregion/country/1
+        [HttpGet("{countryId}", Name = "GetByCountryId")]
+        public IActionResult GetByCountryId(int countryId)
+        {
+            IQueryable<EcoregionViewModel> filteredEcoregions = this.mapper.ProjectTo<EcoregionViewModel>(
+                this.ecoregionService.GetEcoregionsByCountryId(countryId));
+
+            return this.Ok(filteredEcoregions);
+        }
     }
 }

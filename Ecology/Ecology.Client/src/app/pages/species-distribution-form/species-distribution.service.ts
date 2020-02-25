@@ -6,6 +6,7 @@ import { SpeciesDistributionPostModel } from './species-distribution-post-model'
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { SpeciesModel } from './species.model';
+import { Ecoregion } from './ecoregion.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -22,22 +23,30 @@ export class SpeciesDistributionService {
   private baseUrl = 'https://localhost:44360/'
   private speciesDistributionUrl = this.baseUrl + 'api/' + 'speciesdistribution';
   private speciesUrl = this.baseUrl + 'api/' + 'species';
+  private ecoregionUrl = this.baseUrl + 'api/' + 'ecoregion';
 
   constructor(private http: HttpClient) {
   }
 
-  getSpecies(): Observable<SpeciesModel[]> {
+  getSpecies(): Promise<SpeciesModel[]> {
     return this.http.get<SpeciesModel[]>(this.speciesUrl, httpOptions)
       .pipe(
         catchError(this.handleError)
-      );
+      ).toPromise();
   }
 
-  addSpeciesDistribution(speciesDistribution: SpeciesDistributionPostModel): Observable<SpeciesDistributionPostModel> {
+  getEcoregions(countryId: string): Promise<Ecoregion[]> {
+    return this.http.get<Ecoregion[]>(this.ecoregionUrl + '/' + countryId, httpOptions)
+      .pipe(
+        catchError(this.handleError)
+      ).toPromise();
+  }
+
+  addSpeciesDistribution(speciesDistribution: SpeciesDistributionPostModel): Promise<SpeciesDistributionPostModel> {
     return this.http.post<SpeciesDistributionPostModel>(this.speciesDistributionUrl, speciesDistribution, httpOptions)
       .pipe(
         catchError(this.handleError)
-      );
+      ).toPromise();
   }
   
   private handleError(error: HttpErrorResponse) {

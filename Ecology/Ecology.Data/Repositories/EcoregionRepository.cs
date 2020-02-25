@@ -20,5 +20,14 @@ namespace Ecology.Data.Repositories
 
             return ecoregions;
         }
+
+        public IQueryable<Ecoregion> GetEcoregionsByCountryId(int countryId)
+        {
+            IQueryable<Ecoregion> ecoregions = this
+                .All()
+                .Where(e => e.EcoregionCountry.Any(ec => ec.CountryId == countryId));
+
+            return ecoregions;
+        }
     }
 }

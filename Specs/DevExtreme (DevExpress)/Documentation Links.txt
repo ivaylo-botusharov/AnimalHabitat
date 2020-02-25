@@ -1,0 +1,71 @@
+Validation Rules
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/
+
+RangeRule
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/RangeRule/#min
+
+NumericRule
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/NumericRule/
+
+Validate and Submit the Form
+https://js.devexpress.com/Documentation/Guide/Widgets/Form/Validate_and_Submit_the_Form/
+
+Validation
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/Form/Validation/Angular/Light/
+
+NumberBox
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxNumberBox/
+
+NumberBox - Overview
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/NumberBox/Overview/Angular/Light/
+
+SelectBox
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxSelectBox/
+
+SelectBox - Demo - Angular
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/SelectBox/Overview/Angular/Light/
+
+ArrayStore
+https://js.devexpress.com/Documentation/Guide/Widgets/SelectBox/Data_Binding/Simple_Array/ArrayStore/
+
+JSON Data
+https://js.devexpress.com/Documentation/Guide/Widgets/SelectBox/Data_Binding/JSON_Data/
+
+Custom Sources
+https://js.devexpress.com/Documentation/Guide/Widgets/SelectBox/Data_Binding/Custom_Sources/
+
+List Selection
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/List/ListSelection/Angular/Light/
+
+
+--------------------
+
+Data Layer:
+
+DataSource
+https://js.devexpress.com/Documentation/ApiReference/Data_Layer/DataSource/
+
+Data Source Examples
+https://js.devexpress.com/Documentation/Guide/Data_Layer/Data_Source_Examples/
+
+Data Source - Methods - load()
+https://js.devexpress.com/Documentation/ApiReference/Data_Layer/DataSource/Methods/#load
+
+Access the DataSource
+https://js.devexpress.com/Documentation/Guide/Widgets/DataGrid/Data_Binding/Access_the_DataSource/
+
+dxForm - Two or more dxDropDownBox on same form renders the same content
+https://supportcenter.devexpress.com/ticket/details/t575821/dxform-two-or-more-dxdropdownbox-on-same-form-renders-the-same-content
+
+https://stackblitz.com/edit/devextreme-2dxdropdownbox-gfwp6c?file=app%2Fapp.component.html
+
+dxDropDownBox values are not synchronized with dxList placed in the content template
+https://supportcenter.devexpress.com/ticket/details/t546199/dxdropdownbox-values-are-not-synchronized-with-dxlist-placed-in-the-content-template
+
+https://plnkr.co/edit/uqOZ00uoXQh0llcG52BD?p=preview
+
+Custom labels for DevExtreme Angular2 Form
+https://stackoverflow.com/questions/42520120/custom-labels-for-devextreme-angular2-form
+
+----------------------
+

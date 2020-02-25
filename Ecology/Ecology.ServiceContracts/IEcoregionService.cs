@@ -8,5 +8,7 @@ namespace Ecology.ServiceContracts
         IQueryable<Ecoregion> GetEcoregions();
 
         IQueryable<Ecoregion> GetEcoregionsByRealmIdBiomeId(int realmId, int biomeId);
+
+        IQueryable<Ecoregion> GetEcoregionsByCountryId(int countryId);
     }
 }
