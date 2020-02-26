@@ -69,3 +69,48 @@ https://stackoverflow.com/questions/42520120/custom-labels-for-devextreme-angula
 
 ----------------------
 
+Call function in event handler
+https://stackoverflow.com/questions/55900607/call-function-in-event-handler
+
+Cell Editing and Editing API
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/CellEditingAndEditingAPI/Angular/Light/
+
+----------------
+
+Editing - User Interaction - Cell Mode
+https://js.devexpress.com/Documentation/Guide/Widgets/DataGrid/Editing/#User_Interaction/Cell_Mode
+
+Row Editing and Editing Events
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/RowEditingAndEditingEvents/Angular/Light/
+
+editing
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/editing/
+
+----------------
+
+dxDataGrid - How to disable column editing for existing rows and enable it for new rows (allow to insert new values)
+https://supportcenter.devexpress.com/Ticket/Details/T497501/dxdatagrid-how-to-disable-column-editing-for-existing-rows-and-enable-it-for-new-rows
+
+Configuration
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/
+
+Configuration - onEditorPreparing
+https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/#onEditorPreparing
+
+Cell Editing and Editing API
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/CellEditingAndEditingAPI/NetCore/Light/
+
+Editing
+https://js.devexpress.com/Documentation/Guide/Widgets/DataGrid/Editing/#API/Update
+
+Create an OData v4 Endpoint Using ASP.NET Web API
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-v4/create-an-odata-v4-endpoint
+
+Perform CRUD operations using OData in ASP.NET Core
+https://dotnetthoughts.net/perform-crud-operations-using-odata-in-aspnet-core/
+
+dxDataGrid - How to disable column editing for existing rows and enable it for new rows (allow to insert new values)
+https://supportcenter.devexpress.com/Ticket/Details/T497501/dxdatagrid-how-to-disable-column-editing-for-existing-rows-and-enable-it-for-new-rows
+
+dxDataGrid - How to disable the editor conditionally (Angular 2)
+https://supportcenter.devexpress.com/Ticket/Details/T497791/dxdatagrid-how-to-disable-the-editor-conditionally-angular-2
