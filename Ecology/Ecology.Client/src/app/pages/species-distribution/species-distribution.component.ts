@@ -28,4 +28,15 @@ export class SpeciesDistributionComponent {
       ]
     };
   }
+
+  // disables editing all columns except 'Population',
+  // when creating entry allows all columns to be edited
+  disableColumnsEditing(event: any) {
+    if (event.dataField === 'Population' && event.parentType === 'dataRow') {
+      return;
+    }
+    if (!event.row.isNewRow) {
+      event.editorOptions.disabled = true;
+    }
+  }
 }

@@ -10,5 +10,7 @@ namespace Ecology.ServiceContracts
         IQueryable<SpeciesDistribution> GetSpeciesDistributions();
 
         void AddSpeciesDistribution(SpeciesDistribution speciesDistribution);
+
+        void SaveChanges();
     }
 }

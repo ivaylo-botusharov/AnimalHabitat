@@ -33,5 +33,10 @@ namespace Ecology.Services
             this.unitOfWork.SpeciesDistributionRepository.Add(speciesDistribution);
             this.unitOfWork.SpeciesDistributionRepository.SaveChanges();
         }
+
+        public void SaveChanges()
+        {
+            this.unitOfWork.SpeciesDistributionRepository.SaveChanges();
+        }
     }
 }

@@ -6,6 +6,7 @@ using Ecology.Data.Models;
 using Ecology.ServiceContracts;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecology.API.Controllers
 {
@@ -30,6 +31,39 @@ namespace Ecology.API.Controllers
                 .ProjectTo<SpeciesDistributionViewModel>(this.speciesDistributionService.GetSpeciesDistributions()).ToList();
 
             return speciesDistributions;
+        }
+
+        public IActionResult Patch([FromODataUri] int key, Delta<SpeciesDistribution> speciesDistributionDelta)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.BadRequest(this.ModelState);
+            }
+
+            SpeciesDistribution speciesDistribution = this.speciesDistributionService.GetSpeciesDistributionById(key);
+
+            if (speciesDistribution == null)
+            {
+                return this.NotFound();
+            }
+
+            if (speciesDistributionDelta == null)
+            {
+                return this.NotFound();
+            }
+
+            speciesDistributionDelta.Patch(speciesDistribution);
+
+            try
+            {
+                this.speciesDistributionService.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                return this.NotFound();
+            }
+
+            return this.Ok(speciesDistribution);
         }
 
         [HttpPost]
