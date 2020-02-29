@@ -85,11 +85,32 @@ export class SpeciesDistributionFormComponent {
     return formatMessage('ecoregionLabel', '');
   }
 
+  public get speciesRequiredValidationMessage() {
+    return formatMessage('speciesRequiredValidationMessage', '');
+  }
+
+  public get populationRequiredValidationMessage() {
+    return formatMessage('populationRequiredValidationMessage', '');
+  }
+
+  public get populationPositiveNumberValidationMessage() {
+    return formatMessage('populationPositiveNumberValidationMessage', '');
+  }
+
+  public get countryRequiredValidationMessage() {
+    return formatMessage('countryRequiredValidationMessage', '');
+  }
+
+  public get ecoregionRequiredValidationMessage() {
+    return formatMessage('ecoregionRequiredValidationMessage', '');
+  }
+
   onCountryValueChanged = (event: any) => {
     const countryId = event.value;
     this.speciesDistributionService.getEcoregions(countryId).then((ecoregions) => {
       this.ecoregions = ecoregions;
       this.ecoregionSelectBoxDisabled = false;
+      this.form.instance.option('formData').ecoregionId = undefined;
     });
   }
 

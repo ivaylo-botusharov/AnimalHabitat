@@ -15,7 +15,12 @@
       "countryColumnHeader": "Country",
       "ecoregionColumnHeader": "Ecoregion",
       "biomeColumnHeader": "Biome",
-      "realmColumnHeader": "Realm"
+      "realmColumnHeader": "Realm",
+      "speciesRequiredValidationMessage": "Species should be selected!",
+      "populationRequiredValidationMessage": "Population is required!",
+      "populationPositiveNumberValidationMessage": "Population should be positive number!",
+      "countryRequiredValidationMessage": "Country should be selected!",
+      "ecoregionRequiredValidationMessage": "Ecoregion should be selected!"
     },
     "bg": {
       "speciesDistributionTitle": "Разпределение на видовете",
@@ -34,6 +39,11 @@
       "ecoregionColumnHeader": "Екорегион",
       "biomeColumnHeader": "Биом",
       "realmColumnHeader": "Царство",
+      "speciesRequiredValidationMessage": "Трябва да бъде избран вид!",
+      "populationRequiredValidationMessage": "Трябва да бъде въведен брой!",
+      "populationPositiveNumberValidationMessage": "Броят трябва да е по-голям от 0!",
+      "countryRequiredValidationMessage": "Трябва да бъде избрана държава!",
+      "ecoregionRequiredValidationMessage": "Трябва да бъде избран екорегион!",
       "Select": "Изберете...",
       "dxDataGrid-filterRowShowAllText": "(Всички)",
       "dxDataGrid-filterRowResetOperationText": "Изчисти",

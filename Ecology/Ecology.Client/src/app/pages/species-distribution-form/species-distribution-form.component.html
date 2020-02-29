@@ -12,19 +12,19 @@
                     <dxo-label [text]="speciesLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        message="Species should be selected!">
+                        [message]="speciesRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="population" editorType="dxNumberBox" [editorOptions]="{min: '1', showSpinButtons: 'true'}">
                     <dxo-label [text]="populationLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        message="Population is required!">
+                        [message]="populationRequiredValidationMessage">
                     </dxi-validation-rule>
                     <dxi-validation-rule 
                         type="range"
                         [min]="1"
-                        message="Population should be positive number!">
+                        [message]="populationPositiveNumberValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
             </dxi-item>
@@ -33,14 +33,14 @@
                     <dxo-label [text]="countryLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        message="Country should be selected!">
+                        [message]="countryRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="ecoregionId" editorType="dxSelectBox" [editorOptions]="{dataSource: ecoregions, displayExpr: 'name', valueExpr: 'id', disabled: ecoregionSelectBoxDisabled}">
                     <dxo-label [text]="ecoregionLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        message="Ecoregion should be selected!">
+                        [message]="ecoregionRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
             </dxi-item>
