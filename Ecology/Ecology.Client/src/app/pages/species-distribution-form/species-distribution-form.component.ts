@@ -3,6 +3,7 @@ import notify from 'devextreme/ui/notify';
 import { DxFormComponent } from 'devextreme-angular';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
+import { formatMessage } from 'devextreme/localization';
 
 import { SpeciesDistributionService } from './species-distribution.service';
 import { Ecoregion } from './ecoregion.model';
@@ -43,10 +44,30 @@ export class SpeciesDistributionFormComponent {
   }
 
   buttonOptions: any = {
-    text: 'Submit',
+    text: this.submitButtonText,
     type: 'success',
     useSubmitBehavior: true
   };
+
+  public get speciesDistributionTitle() {
+    return formatMessage('speciesDistributionTitle', '');
+  }
+
+  public get formSubmissionSuccess() {
+    return formatMessage('formSubmissionSuccess', '');
+  }
+
+  public get speciesInfoFieldset() {
+    return formatMessage('speciesInfoFieldset', '');
+  }
+
+  public get biogeographyFieldSet() {
+    return formatMessage('biogeographyFieldSet', '');
+  }
+
+  public get submitButtonText() {
+    return formatMessage('submitButtonText', '');
+  }
 
   onCountryValueChanged = (event: any) => {
     const countryId = event.value;
@@ -60,7 +81,7 @@ export class SpeciesDistributionFormComponent {
     const formData = this.form.instance.option('formData');
     this.speciesDistributionService.addSpeciesDistribution(formData).then((result) => {
       notify({
-        message: 'You have submitted the form',
+        message: this.formSubmissionSuccess,
         position: {
             my: 'center top',
             at: 'center top'

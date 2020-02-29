@@ -1,0 +1,32 @@
+{
+    "en": {
+      "speciesDistributionTitle": "Species Distribution",
+      "formSubmissionSuccess": "You have submitted the form",
+      "speciesInfoFieldset": "Species Info",
+      "biogeographyFieldSet": "Biogeography",
+      "submitButtonText": "Submit"
+    },
+    "bg": {
+      "speciesDistributionTitle": "Разпределение на видовете",
+      "formSubmissionSuccess": "Вие изпратихте формата",
+      "speciesInfoFieldset": "Информация за видовете",
+      "biogeographyFieldSet": "Биогеография",
+      "submitButtonText": "Изпрати",
+      "Select": "Изберете...",
+      "dxDataGrid-filterRowShowAllText": "(Всички)",
+      "dxDataGrid-filterRowResetOperationText": "Изчисти",
+      "dxDataGrid-filterRowOperationEquals": "Равно на",
+      "dxDataGrid-filterRowOperationNotEquals": "Не равно на",
+      "dxDataGrid-filterRowOperationLess": "По-малко от",
+      "dxDataGrid-filterRowOperationLessOrEquals": "По-малко или равно на",
+      "dxDataGrid-filterRowOperationGreater": "По-голямо от",
+      "dxDataGrid-filterRowOperationGreaterOrEquals": "По-голямо или равно на",
+      "dxDataGrid-filterRowOperationStartsWith": "Започва с",
+      "dxDataGrid-filterRowOperationContains": "Съдържа",
+      "dxDataGrid-filterRowOperationNotContains": "Не съдържа",
+      "dxDataGrid-filterRowOperationEndsWith": "Завършва с",
+      "dxDataGrid-filterRowOperationBetween": "Между",
+      "dxDataGrid-filterRowOperationBetweenStartText": "Старт",
+      "dxDataGrid-filterRowOperationBetweenEndText": "Край"
+    }
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
+import { formatMessage } from 'devextreme/localization';
 
 @Component({
   templateUrl: 'species-distribution.component.html'
@@ -38,5 +39,9 @@ export class SpeciesDistributionComponent {
     if (event.row === undefined || event.row.isNewRow === undefined || !event.row.isNewRow) {
       event.editorOptions.disabled = true;
     }
+  }
+
+  public get speciesDistributionTitle() {
+    return formatMessage('speciesDistributionTitle', '');
   }
 }
