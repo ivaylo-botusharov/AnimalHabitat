@@ -69,6 +69,22 @@ export class SpeciesDistributionFormComponent {
     return formatMessage('submitButtonText', '');
   }
 
+  public get speciesLabel() {
+    return formatMessage('speciesLabel', '');
+  }
+
+  public get populationLabel() {
+    return formatMessage('populationLabel', '');
+  }
+
+  public get countryLabel() {
+    return formatMessage('countryLabel', '');
+  }
+
+  public get ecoregionLabel() {
+    return formatMessage('ecoregionLabel', '');
+  }
+
   onCountryValueChanged = (event: any) => {
     const countryId = event.value;
     this.speciesDistributionService.getEcoregions(countryId).then((ecoregions) => {

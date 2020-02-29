@@ -19,38 +19,40 @@
 
     <dxi-column
         dataField="Id"
+        [caption]="idColumnHeader"
         alignment="left"
         [width]="70"
         [hidingPriority]="6">
     </dxi-column>
     <dxi-column
         dataField="Species"
+        [caption]="speciesColumnHeader"
         [hidingPriority]="5">
     </dxi-column>
     <dxi-column
         dataField="Population"
-        caption="Population"
+        [caption]="populationColumnHeader"
         alignment="left"
         [hidingPriority]="4">
     </dxi-column>
     <dxi-column
         dataField="Country"
-        caption="Country"
+        [caption]="countryColumnHeader"
         [hidingPriority]="3">
     </dxi-column>
     <dxi-column
         dataField="Ecoregion"
-        caption="Ecoregion"
+        [caption]="ecoregionColumnHeader"
         [hidingPriority]="2">
     </dxi-column>
     <dxi-column
         dataField="Biome"
-        caption="Biome"
+        [caption]="biomeColumnHeader"
         [hidingPriority]="1">
     </dxi-column>
     <dxi-column
         dataField="Realm"
-        caption="Realm"
+        [caption]="realmColumnHeader"
         [hidingPriority]="0">
     </dxi-column>
 </dx-data-grid>

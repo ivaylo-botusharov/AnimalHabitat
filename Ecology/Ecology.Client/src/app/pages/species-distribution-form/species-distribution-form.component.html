@@ -9,13 +9,14 @@
             validationGroup="animalsData">
             <dxi-item itemType="group" [caption]="speciesInfoFieldset">
                 <dxi-item dataField="speciesId" editorType="dxSelectBox" [editorOptions]="{dataSource: speciesDataSource, displayExpr: 'name', valueExpr: 'id'}">
-                    <dxo-label text="Species"></dxo-label>
+                    <dxo-label [text]="speciesLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
                         message="Species should be selected!">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="population" editorType="dxNumberBox" [editorOptions]="{min: '1', showSpinButtons: 'true'}">
+                    <dxo-label [text]="populationLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
                         message="Population is required!">
@@ -29,14 +30,14 @@
             </dxi-item>
             <dxi-item itemType="group" [caption]="biogeographyFieldSet">
                 <dxi-item dataField="countryId" editorType="dxSelectBox" [editorOptions]="{dataSource: countriesUrl, displayExpr: 'name', valueExpr: 'id', onValueChanged: onCountryValueChanged}">
-                    <dxo-label text="Country"></dxo-label>
+                    <dxo-label [text]="countryLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
                         message="Country should be selected!">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="ecoregionId" editorType="dxSelectBox" [editorOptions]="{dataSource: ecoregions, displayExpr: 'name', valueExpr: 'id', disabled: ecoregionSelectBoxDisabled}">
-                    <dxo-label text="Ecoregion"></dxo-label>
+                    <dxo-label [text]="ecoregionLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
                         message="Ecoregion should be selected!">

@@ -44,4 +44,32 @@ export class SpeciesDistributionComponent {
   public get speciesDistributionTitle() {
     return formatMessage('speciesDistributionTitle', '');
   }
+
+  public get idColumnHeader() {
+    return formatMessage('idColumnHeader', '');
+  }
+
+  public get speciesColumnHeader() {
+    return formatMessage('speciesColumnHeader', '');
+  }
+
+  public get populationColumnHeader() {
+    return formatMessage('populationColumnHeader', '');
+  }
+
+  public get countryColumnHeader() {
+    return formatMessage('countryColumnHeader', '');
+  }
+
+  public get ecoregionColumnHeader() {
+    return formatMessage('ecoregionColumnHeader', '');
+  }
+
+  public get biomeColumnHeader() {
+    return formatMessage('biomeColumnHeader', '');
+  }
+
+  public get realmColumnHeader() {
+    return formatMessage('realmColumnHeader', '');
+  }
 }
