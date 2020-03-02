@@ -15,7 +15,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./side-nav-inner-toolbar.component.scss']
 })
 export class SideNavInnerToolbarComponent implements OnInit {
-  menuItems = navigation;
+  menuItems: any;
   selectedRoute = '';
 
   menuOpened: boolean;
@@ -32,6 +32,8 @@ export class SideNavInnerToolbarComponent implements OnInit {
   constructor(private screen: ScreenService, private router: Router) { }
 
   ngOnInit() {
+    this.traverse(navigation, 'Create Distribution', 'gaga');
+    this.menuItems = navigation;
     this.menuOpened = this.screen.sizes['screen-large'];
 
     this.router.events.subscribe(val => {
@@ -94,6 +96,21 @@ export class SideNavInnerToolbarComponent implements OnInit {
       this.temporaryMenuOpened = true;
       this.menuOpened = true;
     }
+  }
+
+  traverse(obj: any, text: string, newText: string) {
+    if (obj.text === text) {
+      obj.text = newText;
+      console.log(obj.text);
+    }
+
+    for (const i in obj) {
+        if (obj.hasOwnProperty(i)) {
+          console.log(i);
+          this.traverse(obj[i], text, newText);
+        }
+    }
+    return;
   }
 }
 

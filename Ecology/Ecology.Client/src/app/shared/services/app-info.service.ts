@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { LocalizationMessageService } from '../../localization-message.service';
 
 @Injectable()
 export class AppInfoService {
-  constructor() {}
+  constructor(private messageService: LocalizationMessageService) {}
 
   public get title() {
-    return 'Ecology';
+    return this.messageService.ecologyMenuTitle;
   }
 }

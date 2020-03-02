@@ -4,6 +4,7 @@ import { DxFormComponent } from 'devextreme-angular';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
 import { formatMessage } from 'devextreme/localization';
+import { LocalizationMessageService } from '../../localization-message.service';
 
 import { SpeciesDistributionService } from './species-distribution.service';
 import { Ecoregion } from './ecoregion.model';
@@ -24,86 +25,32 @@ export class SpeciesDistributionFormComponent {
   ecoregionsUrl = this.baseUrl + 'api/' + 'ecoregion';
   ecoregionSelectBoxDisabled = true;
 
-  constructor(private speciesDistributionService: SpeciesDistributionService) {
-    this.colCountByScreen = {
-      xs: 1,
-      sm: 2,
-      md: 3,
-      lg: 4
-    };
+  constructor(
+    private speciesDistributionService: SpeciesDistributionService,
+    private messageService: LocalizationMessageService) {
+      this.colCountByScreen = {
+        xs: 1,
+        sm: 2,
+        md: 3,
+        lg: 4
+      };
 
-    this.speciesDataSource = new DataSource({
-      store: new CustomStore({
-          key: 'id',
-          loadMode: 'raw',
-          load: () => {
-              return this.speciesDistributionService.getSpecies();
-          }
-      })
-    });
+      this.speciesDataSource = new DataSource({
+        store: new CustomStore({
+            key: 'id',
+            loadMode: 'raw',
+            load: () => {
+                return this.speciesDistributionService.getSpecies();
+            }
+        })
+      });
   }
 
   buttonOptions: any = {
-    text: this.submitButtonText,
+    text: this.messageService.submitButtonText,
     type: 'success',
     useSubmitBehavior: true
   };
-
-  public get speciesDistributionTitle() {
-    return formatMessage('speciesDistributionTitle', '');
-  }
-
-  public get formSubmissionSuccess() {
-    return formatMessage('formSubmissionSuccess', '');
-  }
-
-  public get speciesInfoFieldset() {
-    return formatMessage('speciesInfoFieldset', '');
-  }
-
-  public get biogeographyFieldSet() {
-    return formatMessage('biogeographyFieldSet', '');
-  }
-
-  public get submitButtonText() {
-    return formatMessage('submitButtonText', '');
-  }
-
-  public get speciesLabel() {
-    return formatMessage('speciesLabel', '');
-  }
-
-  public get populationLabel() {
-    return formatMessage('populationLabel', '');
-  }
-
-  public get countryLabel() {
-    return formatMessage('countryLabel', '');
-  }
-
-  public get ecoregionLabel() {
-    return formatMessage('ecoregionLabel', '');
-  }
-
-  public get speciesRequiredValidationMessage() {
-    return formatMessage('speciesRequiredValidationMessage', '');
-  }
-
-  public get populationRequiredValidationMessage() {
-    return formatMessage('populationRequiredValidationMessage', '');
-  }
-
-  public get populationPositiveNumberValidationMessage() {
-    return formatMessage('populationPositiveNumberValidationMessage', '');
-  }
-
-  public get countryRequiredValidationMessage() {
-    return formatMessage('countryRequiredValidationMessage', '');
-  }
-
-  public get ecoregionRequiredValidationMessage() {
-    return formatMessage('ecoregionRequiredValidationMessage', '');
-  }
 
   onCountryValueChanged = (event: any) => {
     const countryId = event.value;
@@ -118,7 +65,7 @@ export class SpeciesDistributionFormComponent {
     const formData = this.form.instance.option('formData');
     this.speciesDistributionService.addSpeciesDistribution(formData).then((result) => {
       notify({
-        message: this.formSubmissionSuccess,
+        message: this.messageService.formSubmissionSuccess,
         position: {
             my: 'center top',
             at: 'center top'

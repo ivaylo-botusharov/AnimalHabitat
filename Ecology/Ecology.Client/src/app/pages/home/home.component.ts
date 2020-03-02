@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LocalizationMessageService } from '../../localization-message.service'
 
 @Component({
   templateUrl: 'home.component.html',
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
-  constructor() {}
+  constructor(private messageService: LocalizationMessageService) {}
 
   helloWorld() {
     alert('Hello world!');

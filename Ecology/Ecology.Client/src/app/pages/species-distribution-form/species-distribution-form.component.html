@@ -1,4 +1,4 @@
-<h2 class="content-block">{{speciesDistributionTitle}}</h2>
+<h2 class="content-block">{{messageService.speciesDistributionTitle}}</h2>
 
 <div class="content-block dx-card responsive-paddings">
     <form action="your-action" (submit)="onFormSubmit($event)">
@@ -7,40 +7,40 @@
             [showColonAfterLabel]="true"
             [showValidationSummary]="true"
             validationGroup="animalsData">
-            <dxi-item itemType="group" [caption]="speciesInfoFieldset">
+            <dxi-item itemType="group" [caption]="messageService.speciesInfoFieldset">
                 <dxi-item dataField="speciesId" editorType="dxSelectBox" [editorOptions]="{dataSource: speciesDataSource, displayExpr: 'name', valueExpr: 'id'}">
-                    <dxo-label [text]="speciesLabel"></dxo-label>
+                    <dxo-label [text]="messageService.speciesLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        [message]="speciesRequiredValidationMessage">
+                        [message]="messageService.speciesRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="population" editorType="dxNumberBox" [editorOptions]="{min: '1', showSpinButtons: 'true'}">
-                    <dxo-label [text]="populationLabel"></dxo-label>
+                    <dxo-label [text]="messageService.populationLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        [message]="populationRequiredValidationMessage">
+                        [message]="messageService.populationRequiredValidationMessage">
                     </dxi-validation-rule>
                     <dxi-validation-rule 
                         type="range"
                         [min]="1"
-                        [message]="populationPositiveNumberValidationMessage">
+                        [message]="messageService.populationPositiveNumberValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
             </dxi-item>
-            <dxi-item itemType="group" [caption]="biogeographyFieldSet">
+            <dxi-item itemType="group" [caption]="messageService.biogeographyFieldSet">
                 <dxi-item dataField="countryId" editorType="dxSelectBox" [editorOptions]="{dataSource: countriesUrl, displayExpr: 'name', valueExpr: 'id', onValueChanged: onCountryValueChanged}">
-                    <dxo-label [text]="countryLabel"></dxo-label>
+                    <dxo-label [text]="messageService.countryLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        [message]="countryRequiredValidationMessage">
+                        [message]="messageService.countryRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item dataField="ecoregionId" editorType="dxSelectBox" [editorOptions]="{dataSource: ecoregions, displayExpr: 'name', valueExpr: 'id', disabled: ecoregionSelectBoxDisabled}">
-                    <dxo-label [text]="ecoregionLabel"></dxo-label>
+                    <dxo-label [text]="messageService.ecoregionLabel"></dxo-label>
                     <dxi-validation-rule 
                         type="required"
-                        [message]="ecoregionRequiredValidationMessage">
+                        [message]="messageService.ecoregionRequiredValidationMessage">
                     </dxi-validation-rule>
                 </dxi-item>
             </dxi-item>

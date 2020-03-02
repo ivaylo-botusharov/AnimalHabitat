@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartsService, CitiesPopulation, ComplaintsWithPercent } from './charts.service';
+import { LocalizationMessageService } from '../../localization-message.service';
 
 @Component({
   selector: 'app-charts',
@@ -11,17 +12,19 @@ export class ChartsComponent implements OnInit {
   citiesPopulations: CitiesPopulation[];
   complaintsWithPercent: ComplaintsWithPercent[];
 
-  constructor(chartsService: ChartsService) { 
-    this.citiesPopulations = chartsService.getCitiesPopulations();
-    this.complaintsWithPercent = chartsService.getComplaintsData();
+  constructor(
+    chartsService: ChartsService,
+    private messageService: LocalizationMessageService) {
+      this.citiesPopulations = chartsService.getCitiesPopulations();
+      this.complaintsWithPercent = chartsService.getComplaintsData();
   }
 
   ngOnInit() {
   }
 
   customizeTreeMapTooltip(arg) {
-    var data = arg.node.data,
-        result = null;
+    const data = arg.node.data;
+    let result = null;
 
     if (arg.node.isLeaf()) {
       result = "<span class='city'>" + data.name + "</span> (" +

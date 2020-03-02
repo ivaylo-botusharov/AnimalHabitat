@@ -20,7 +20,13 @@
       "populationRequiredValidationMessage": "Population is required!",
       "populationPositiveNumberValidationMessage": "Population should be positive number!",
       "countryRequiredValidationMessage": "Country should be selected!",
-      "ecoregionRequiredValidationMessage": "Ecoregion should be selected!"
+      "ecoregionRequiredValidationMessage": "Ecoregion should be selected!",
+      "homeTitle": "Home",
+      "examplesTitle": "Examples",
+      "createDistributionTitle": "Create Distribution",
+      "speciesDistributionMenuTitle": "Species Distribution",
+      "chartsMenuTitle": "Charts",
+      "ecologyMenuTitle": "Ecology"
     },
     "bg": {
       "speciesDistributionTitle": "Разпределение на видовете",
@@ -44,6 +50,12 @@
       "populationPositiveNumberValidationMessage": "Броят трябва да е по-голям от 0!",
       "countryRequiredValidationMessage": "Трябва да бъде избрана държава!",
       "ecoregionRequiredValidationMessage": "Трябва да бъде избран екорегион!",
+      "homeTitle": "Начало",
+      "examplesTitle": "Примери",
+      "createDistributionTitle": "Създай разпределение",
+      "speciesDistributionMenuTitle": "Разпределение на видове",
+      "chartsMenuTitle": "Графики",
+      "ecologyMenuTitle": "Екология",
       "Select": "Изберете...",
       "dxDataGrid-filterRowShowAllText": "(Всички)",
       "dxDataGrid-filterRowResetOperationText": "Изчисти",

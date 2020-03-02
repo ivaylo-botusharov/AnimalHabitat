@@ -7,6 +7,7 @@ import { CommonModule } from '@angular/common';
 
 import { navigation } from '../../app-navigation';
 import { Router, NavigationEnd } from '@angular/router';
+import { LocalizationMessageService } from '../../localization-message.service';
 
 @Component({
   selector: 'app-side-nav-outer-toolbar',
@@ -14,7 +15,7 @@ import { Router, NavigationEnd } from '@angular/router';
   styleUrls: ['./side-nav-outer-toolbar.component.scss']
 })
 export class SideNavOuterToolbarComponent implements OnInit {
-  menuItems = navigation;
+  menuItems: any;
   selectedRoute = '';
 
   menuOpened: boolean;
@@ -28,9 +29,15 @@ export class SideNavOuterToolbarComponent implements OnInit {
   minMenuSize = 0;
   shaderEnabled = false;
 
-  constructor(private screen: ScreenService, private router: Router) { }
+  constructor(
+    private screen: ScreenService,
+    private router: Router,
+    private messageService: LocalizationMessageService) {
+    }
 
   ngOnInit() {
+    this.translateMenu(navigation, this.messageService);
+    this.menuItems = navigation;
     this.menuOpened = this.screen.sizes['screen-large'];
 
     this.router.events.subscribe(val => {
@@ -87,6 +94,17 @@ export class SideNavOuterToolbarComponent implements OnInit {
     if (this.showMenuAfterClick) {
       this.temporaryMenuOpened = true;
       this.menuOpened = true;
+    }
+  }
+
+  translateMenu(objArr: any, messageService: LocalizationMessageService) {
+    for(const element of objArr) {
+      if (element.hasOwnProperty('text') && !!messageService[element.text]) {
+        element.text = messageService[element.text];
+      }
+      if (element.hasOwnProperty('items') && element.items.length > 0) {
+        this.translateMenu(element.items, messageService);
+      }
     }
   }
 }

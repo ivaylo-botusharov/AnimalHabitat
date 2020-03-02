@@ -1,25 +1,25 @@
 export const navigation = [
   {
-    text: 'Home',
+    text: 'homeTitle',
     path: '/home',
     icon: 'home'
   },
   {
-    text: 'Examples',
+    text: 'examplesTitle',
     icon: 'folder',
     items: [
       {
-        text: 'Create Distribution',
+        text: 'createDistributionTitle',
         path: '/create-distribution'
       },
       {
-        text: 'Species Distribution',
+        text: 'speciesDistributionMenuTitle',
         path: '/species-distribution'
       }
     ]
   },
   {
-    text: 'Charts',
+    text: 'chartsMenuTitle',
     path: 'pages/charts',
     icon: 'chart'
   }
