@@ -26,7 +26,8 @@
       "createDistributionTitle": "Create Distribution",
       "speciesDistributionMenuTitle": "Species Distribution",
       "chartsMenuTitle": "Charts",
-      "ecologyMenuTitle": "Ecology"
+      "ecologyMenuTitle": "Ecology",
+      "homePageParagraphText": "Welcome to Ecology Application!"
     },
     "bg": {
       "speciesDistributionTitle": "Разпределение на видовете",
@@ -56,6 +57,7 @@
       "speciesDistributionMenuTitle": "Разпределение на видове",
       "chartsMenuTitle": "Графики",
       "ecologyMenuTitle": "Екология",
+      "homePageParagraphText": "Добре дошли в приложението за екология!",
       "Select": "Изберете...",
       "dxDataGrid-filterRowShowAllText": "(Всички)",
       "dxDataGrid-filterRowResetOperationText": "Изчисти",

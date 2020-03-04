@@ -113,4 +113,8 @@ export class LocalizationMessageService {
     public get ecologyMenuTitle() {
         return formatMessage('ecologyMenuTitle', '');
     }
+
+    public get homePageParagraphText() {
+        return formatMessage('homePageParagraphText', '');
+    }
 }

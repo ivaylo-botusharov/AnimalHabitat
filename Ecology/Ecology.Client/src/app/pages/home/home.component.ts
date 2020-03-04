@@ -8,8 +8,4 @@ import { LocalizationMessageService } from '../../localization-message.service'
 
 export class HomeComponent {
   constructor(private messageService: LocalizationMessageService) {}
-
-  helloWorld() {
-    alert('Hello world!');
-  }
 }
