@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-import { SpeciesDistributionPostModel } from './species-distribution-post-model';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { SpeciesModel } from './species.model';
-import { Ecoregion } from './ecoregion.model';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -15,7 +13,7 @@ const httpOptions = {
 };
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class SpeciesDistributionService {
 
@@ -27,25 +25,11 @@ export class SpeciesDistributionService {
   constructor(private http: HttpClient) {
   }
 
-  getSpecies(): Promise<SpeciesModel[]> {
+  getSpecies(): Observable<SpeciesModel[]> {
     return this.http.get<SpeciesModel[]>(this.speciesUrl, httpOptions)
       .pipe(
         catchError(this.handleError)
-      ).toPromise();
-  }
-
-  getEcoregions(countryId: string): Promise<Ecoregion[]> {
-    return this.http.get<Ecoregion[]>(this.ecoregionUrl + '/' + countryId, httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      ).toPromise();
-  }
-
-  addSpeciesDistribution(speciesDistribution: SpeciesDistributionPostModel): Promise<SpeciesDistributionPostModel> {
-    return this.http.post<SpeciesDistributionPostModel>(this.speciesDistributionUrl, speciesDistribution, httpOptions)
-      .pipe(
-        catchError(this.handleError)
-      ).toPromise();
+      );
   }
 
   private handleError(error: HttpErrorResponse) {

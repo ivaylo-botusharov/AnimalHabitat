@@ -9,8 +9,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 
 import { AppComponent } from './app.component';
-
-import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   AgmCoreModule
@@ -23,6 +22,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
+    HttpClientModule,
     ComponentsModule,
     RouterModule,
     AppRoutingModule,

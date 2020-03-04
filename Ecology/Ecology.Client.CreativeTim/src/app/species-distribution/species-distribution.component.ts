@@ -11,5 +11,4 @@ export class SpeciesDistributionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

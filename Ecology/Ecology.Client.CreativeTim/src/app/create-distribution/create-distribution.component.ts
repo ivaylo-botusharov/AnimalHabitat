@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpeciesDistributionService } from './species-distribution.service';
 
 @Component({
   selector: 'app-create-distribution',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateDistributionComponent implements OnInit {
 
-  constructor() { }
+  public selectedSpecies: string;
 
-  ngOnInit() {
+  public speciesList;
+
+  constructor(private speciesDistributionService: SpeciesDistributionService) {
   }
 
+  ngOnInit() {
+    this.getSpecies();
+  }
+
+  getSpecies() {
+    this.speciesDistributionService.getSpecies().subscribe(speciesList => {
+      this.speciesList = speciesList;
+    })
+  }
 }

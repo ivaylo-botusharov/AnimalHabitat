@@ -3,7 +3,6 @@ import notify from 'devextreme/ui/notify';
 import { DxFormComponent } from 'devextreme-angular';
 import DataSource from 'devextreme/data/data_source';
 import CustomStore from 'devextreme/data/custom_store';
-import { formatMessage } from 'devextreme/localization';
 import { LocalizationMessageService } from '../../localization-message.service';
 
 import { SpeciesDistributionService } from './species-distribution.service';
