@@ -1,34 +1,38 @@
 import { Component } from '@angular/core';
 import 'devextreme/data/odata/store';
-import { formatMessage } from 'devextreme/localization';
+import DataSource from 'devextreme/data/data_source';
 import { LocalizationMessageService } from '../../localization-message.service';
+import { SpeciesDistributionGetModel } from './species-distribution-get.model';
 
 @Component({
   templateUrl: 'species-distribution.component.html'
 })
 
 export class SpeciesDistributionComponent {
-  dataSource: any;
+  dataSource: DataSource;
   priority: any[];
 
   constructor(private messageService: LocalizationMessageService) {
-    this.dataSource = {
+    this.dataSource = new DataSource({
       store: {
         type: 'odata',
         version: 4,
         key: 'Id',
         url: 'https://localhost:44360/odata/speciesdistribution'
-      },
-      select: [
-        'Id',
-        'Species',
-        'Population',
-        'Country',
-        'Ecoregion',
-        'Biome',
-        'Realm'
-      ]
-    };
+      }
+    });
+
+    this.dataSource.select((dataItem: SpeciesDistributionGetModel) => {
+      return {
+        Id: dataItem.Id,
+        SpeciesCommonName: `${dataItem.SpeciesCommonName} (${dataItem.SpeciesScientificName})`,
+        Population: dataItem.Population,
+        Country: dataItem.Country,
+        Ecoregion: dataItem.Ecoregion,
+        Biome: dataItem.Biome,
+        Realm: dataItem.Realm
+      };
+    });
   }
 
   // disables editing all columns except 'Population',

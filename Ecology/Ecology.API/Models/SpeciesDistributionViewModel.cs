@@ -4,7 +4,9 @@
     {
         public int Id { get; set; }
 
-        public string Species { get; set; }
+        public string SpeciesCommonName { get; set; }
+
+        public string SpeciesScientificName { get; set; }
 
         public string Realm { get; set; }
 

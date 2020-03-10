@@ -11,8 +11,12 @@ namespace Ecology.API.Mappings
             this.CreateMap<SpeciesDistribution, SpeciesDistributionViewModel>()
                 .ForMember(
                     dest =>
-                    dest.Species,
+                    dest.SpeciesCommonName,
                     opt => opt.MapFrom(src => src.Species.CommonName))
+                .ForMember(
+                    dest =>
+                    dest.SpeciesScientificName,
+                    opt => opt.MapFrom(src => src.Species.ScientificName))
                 .ForMember(
                     dest =>
                     dest.Realm,

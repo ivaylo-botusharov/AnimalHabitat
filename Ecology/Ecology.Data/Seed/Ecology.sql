@@ -334,22 +334,22 @@ VALUES
 	(@eyreYorkMalleeEcoregionId, @australiaCountryId)
 
 
-INSERT INTO "Species" ([CommonName])
+INSERT INTO "Species" ([CommonName], [ScientificName])
 VALUES
-	('White Hourse'),
-	('Kangaroo'),
-	('Black Bear'),
-	('Bonobo'),
-	('Lemur'),
-	('Elephant'),
-	('Zebra'),
-	('Vervet Monkey'),
-	('Brown Fox'),
-	('Gibbon'),
-	('Gorilla'),
-	('Lion'),
-	('Koala'),
-	('White Tiger')
+	('White Hourse', 'Equus caballus'),
+	('Kangaroo', 'Macropus rufus'),
+	('Black Bear', 'Ursus americanus'),
+	('Bonobo', 'Pan paniscus'),
+	('Lemur', 'Lemuroidea'),
+	('Elephant', 'Loxodonta'),
+	('Zebra', 'Equus quagga'),
+	('Vervet Monkey', 'Chlorocebus pygerythrus'),
+	('Brown Fox', 'Vulpes'),
+	('Gibbon', 'Hylobatidae'),
+	('Gorilla', 'Gorilla'),
+	('Lion', 'Panthera leo'),
+	('Koala', 'Phascolarctos cinereus'),
+	('White Tiger', 'Panthera tigris')
 
 
 DECLARE @whiteHourseSpeciesId INT = (SELECT TOP 1 Id FROM "Species" WHERE [CommonName] = 'White Hourse');
