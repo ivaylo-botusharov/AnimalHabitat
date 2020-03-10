@@ -32,7 +32,6 @@ export class SideNavInnerToolbarComponent implements OnInit {
   constructor(private screen: ScreenService, private router: Router) { }
 
   ngOnInit() {
-    this.traverse(navigation, 'Create Distribution', 'gaga');
     this.menuItems = navigation;
     this.menuOpened = this.screen.sizes['screen-large'];
 
@@ -96,21 +95,6 @@ export class SideNavInnerToolbarComponent implements OnInit {
       this.temporaryMenuOpened = true;
       this.menuOpened = true;
     }
-  }
-
-  traverse(obj: any, text: string, newText: string) {
-    if (obj.text === text) {
-      obj.text = newText;
-      console.log(obj.text);
-    }
-
-    for (const i in obj) {
-        if (obj.hasOwnProperty(i)) {
-          console.log(i);
-          this.traverse(obj[i], text, newText);
-        }
-    }
-    return;
   }
 }
 

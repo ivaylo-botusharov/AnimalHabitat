@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginFormComponent } from './shared/components';
 import { AuthGuardService } from './shared/services';
@@ -14,8 +15,14 @@ import {
   DxChartModule
 } from 'devextreme-angular';
 import { ChartsComponent } from './pages/charts/charts.component';
+import { SpeciesByEcoregionComponent } from './pages/species-by-ecoregion/species-by-ecoregion.component';
 
 const routes: Routes = [
+  {
+    path: 'pages/species-by-ecoregion',
+    component: SpeciesByEcoregionComponent,
+    canActivate: [ AuthGuardService ]
+  },
   {
     path: 'pages/charts',
     component: ChartsComponent,
@@ -50,6 +57,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
+    BrowserModule,
     RouterModule.forRoot(routes),
     DxSelectBoxModule,
     DxDataGridModule,
@@ -64,6 +72,7 @@ const routes: Routes = [
     HomeComponent,
     SpeciesDistributionFormComponent,
     SpeciesDistributionComponent,
-    ChartsComponent]
+    ChartsComponent,
+    SpeciesByEcoregionComponent]
 })
 export class AppRoutingModule { }

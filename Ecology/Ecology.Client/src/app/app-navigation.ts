@@ -22,5 +22,10 @@ export const navigation = [
     text: 'chartsMenuTitle',
     path: 'pages/charts',
     icon: 'chart'
+  },
+  {
+    text: 'speciesByEcoregionTitle',
+    path: 'pages/species-by-ecoregion',
+    icon: 'folder'
   }
 ];

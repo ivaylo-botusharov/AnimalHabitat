@@ -1,0 +1,19 @@
+<h2 class="content-block">{{messageService.speciesByEcoregionTitle}}</h2>
+<div class="dx-card content-block responsive-paddings">
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">EcoregionId</th>
+            <th scope="col">EcoregionName</th>
+            <th scope="col">Species</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let speciesByEcoregion of speciesByEcoregionList">
+            <td>{{speciesByEcoregion.EcoregionId}}</td>
+            <td>{{speciesByEcoregion.EcoregionName}}</td>
+            <td>{{speciesByEcoregion.Species}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>

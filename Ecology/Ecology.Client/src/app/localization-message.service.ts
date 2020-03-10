@@ -117,4 +117,8 @@ export class LocalizationMessageService {
     public get homePageParagraphText() {
         return formatMessage('homePageParagraphText', '');
     }
+
+    public get speciesByEcoregionTitle() {
+        return formatMessage('speciesByEcoregionTitle', '');
+    }
 }

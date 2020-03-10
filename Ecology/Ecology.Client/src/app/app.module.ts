@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { SideNavOuterToolbarModule, SideNavInnerToolbarModule, SingleCardModule } from './layouts';
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     SingleCardModule,
     FooterModule,
     LoginFormModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [AuthService, ScreenService, AppInfoService, SpeciesDistributionService],
   bootstrap: [AppComponent]
