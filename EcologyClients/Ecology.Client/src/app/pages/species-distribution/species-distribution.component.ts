@@ -18,7 +18,7 @@ export class SpeciesDistributionComponent {
         type: 'odata',
         version: 4,
         key: 'Id',
-        url: 'https://localhost:44360/odata/speciesdistribution'
+        url: 'https://localhost:5001/odata/speciesdistribution'
       }
     });
 

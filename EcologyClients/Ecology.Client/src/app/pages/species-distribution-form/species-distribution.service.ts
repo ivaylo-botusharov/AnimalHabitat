@@ -19,7 +19,7 @@ const httpOptions = {
 })
 export class SpeciesDistributionService {
 
-  private baseUrl = 'https://localhost:44360/';
+  private baseUrl = 'https://localhost:5001/';
   private speciesDistributionUrl = this.baseUrl + 'api/' + 'speciesdistribution';
   private speciesUrl = this.baseUrl + 'api/' + 'species';
   private ecoregionUrl = this.baseUrl + 'api/' + 'ecoregion';

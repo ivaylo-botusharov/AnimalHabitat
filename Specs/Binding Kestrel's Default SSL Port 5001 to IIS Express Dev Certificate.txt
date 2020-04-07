@@ -1,0 +1,136 @@
+Issue: Angular Client - http requests does not return answer when ASP.NET Core API started through Visual Studio
+Reason: The Angular Client is set to use one dev server URL, e.g. https://localhost:5000 (Kestrel's default), 
+but when the ASP.NET Core Web API application is started through Visual Studio, it runs it on another port, e.g. https://localhost:44360
+
+Solutions:
+
+Option A. launchSetting.json - Remove IIS Profile and leave only Ecology.API profile which runs kestrel
+
+Option B. Add environment files with different server base URLs when the backend is started by the .NET CLI or Visual Studio, for ex:
+
+environment.dev-kestrel.ts
+environment.dev-iisexpress.ts
+
+When the ASP.NET Core API is started using:
+    - .NET CLI, start the Angular client by: ng serve --configuration=dev-kestrel
+    - Visual Studio, start the Angular client by: ng serve --configuration=dev-iisexpress
+
+
+Option C. Make IIS Express use Kestrel's default port 5001
+
+When the application is started through Visual Studio - Debugging - Start without Debugging (Ctrl + F5) and it's set to start IIS Express, we can:
+
+C. 1. Set the IIS Express - sslPort to: 5001
+
+and then:
+
+C. 2. Bind Kestrel's Default SSL Port 5001 to IIS Express Development Certificate
+
+1. Run: netsh http show sslcert > sslcert.txt
+
+2. In sslcert.txt search for the port specified in Properties/launchSettting.json - iisSettings - iisExpress - sslPort
+
+IP:port                 : 0.0.0.0:44360 
+Certificate Hash        : f703c7f5314014501469b76725036fca88f232cc
+Application ID          : {214124cd-d05b-4309-9af9-9caa44b2b74a} 
+Certificate Store Name  : MY 
+Verify Client Certificate Revocation    : Enabled
+Verify Revocation Using Cached Client Certificate Only    : Disabled
+Usage Check    : Enabled
+Revocation Freshness Time : 0 
+URL Retrieval Timeout   : 0 
+Ctl Identifier          : (null) 
+Ctl Store Name          : (null) 
+DS Mapper Usage    : Disabled
+Negotiate Client Certificate    : Disabled
+
+---------------------------
+
+3. Copy the Certificate Hash (Thumbprint) and Application ID from the port's 44360 configuration
+
+4. Replace the placeholders in:
+
+netsh http add sslcert ipport=0.0.0.0:<port> certhash=<Thumbprint> appid=<Application ID>
+
+* thumbprint - is Certificate Hash
+
+
+5. Add the port binded for the IIS Express Development Certificate:
+
+netsh http add sslcert ipport=0.0.0.0:5001 certhash=f703c7f5314014501469b76725036fca88f232cc appid={214124cd-d05b-4309-9af9-9caa44b2b74a}
+
+6. Check if specified ip port is set successfully for the dev certificate:
+
+6.1. Run: netsh http show sslcert > sslcert.txt
+
+6.2. Check values in the output file: sslcert.txt
+
+For me these values are:
+
+IP:port                 : 0.0.0.0:5001
+Certificate Hash        : f703c7f5314014501469b76725036fca88f232cc
+Application ID          : {214124cd-d05b-4309-9af9-9caa44b2b74a} 
+Certificate Store Name  : (null) 
+Verify Client Certificate Revocation    : Enabled
+Verify Revocation Using Cached Client Certificate Only    : Disabled
+Usage Check    : Enabled
+Revocation Freshness Time : 0 
+URL Retrieval Timeout   : 0 
+Ctl Identifier          : (null) 
+Ctl Store Name          : (null) 
+DS Mapper Usage    : Disabled
+Negotiate Client Certificate    : Disabled
+
+------------
+
+* The ASP.NET Core HTTPS Development Certificate (and it's port 5001) added by running dotnet run in command line are not listed in the command's "netsh http show sslcert" output.
+Only the IIS Development Certificate and it's port bindings are listed, within 44300 - 44399
+
+ASP.NET Core Dev Cert Thumbprint: ‎134a043ee29bb8caad164ebe4735722d4792a688
+
+-------------------------------------
+
+References:
+
+Handling URL Binding Failures in IIS Express
+https://docs.microsoft.com/en-us/iis/extensions/using-iis-express/handling-url-binding-failures-in-iis-express#using-a-custom-ssl-port
+
+IIS Express — Getting SSL to Work
+https://stackoverflow.com/a/33748578/1961386
+
+Enforce HTTPS in ASP.NET Core
+https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl
+
+Visual Studio 2017 - Resolving SSL/TLS Connections Problems with IIS Express
+https://app.pluralsight.com/guides/visual-studio-2017-resolving-ssl-tls-connections-problems-with-iis-express
+
+ASP.NET Core: How to change IIS Express port?
+https://stackoverflow.com/a/51918161/1961386
+
+------------
+
+Web server implementations in ASP.NET Core
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/
+
+Kestrel web server implementation in ASP.NET Core
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel
+
+.NET Generic Host
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/generic-host
+
+ASP.NET Core Web Host
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/web-host
+
+Host ASP.NET Core on Windows with IIS
+https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/
+
+Development-time IIS support in Visual Studio for ASP.NET Core
+https://docs.microsoft.com/en-us/aspnet/core/host-and-deploy/iis/development-time-iis-support
+
+Deprecated:
+
+ASP.NET Core Web Host
+https://docs.microsoft.com/en-us/aspnet/core/fundamentals/host/web-host
+
+How can I disable the IIS Express launch profile for ASP.NET Core?
+https://stackoverflow.com/a/42401596/1961386
