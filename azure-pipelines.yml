@@ -1,0 +1,36 @@
+trigger:
+- '*'
+
+pool:
+  vmImage: 'ubuntu-16.04'
+  demands:
+  - npm
+
+variables:
+  buildConfiguration: 'Release'
+  dotnetSdkVersion: '3.1.201'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core SDK $(dotnetSdkVersion)'
+  inputs:
+    packageType: sdk
+    version: '$(dotnetSdkVersion)'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Restore project dependencies'
+  inputs:
+    command: 'restore'
+    projects: '**/*.csproj'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Debug'
+
+- template: templates/build.yml
+  parameters:
+    buildConfiguration: 'Release'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: drop'
+  condition: succeeded()
