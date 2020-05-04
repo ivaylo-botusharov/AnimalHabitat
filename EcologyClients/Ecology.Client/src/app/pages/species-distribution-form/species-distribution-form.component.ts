@@ -19,7 +19,7 @@ export class SpeciesDistributionFormComponent {
   speciesDataSource: DataSource;
   ecoregions: Ecoregion[] = [];
 
-  private baseUrl = 'https://localhost:44360/';
+  private baseUrl = 'https://localhost:5001/';
   countriesUrl = this.baseUrl + 'api/' + 'country';
   ecoregionsUrl = this.baseUrl + 'api/' + 'ecoregion';
   ecoregionSelectBoxDisabled = true;

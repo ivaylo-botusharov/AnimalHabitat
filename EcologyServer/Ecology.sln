@@ -6,6 +6,8 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{ED5BF64B-BBF2-43C1-B998-FA4693F99124}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		Ecology-Codemap.png = Ecology-Codemap.png
+		Ecology.DependencyValidation.png = Ecology.DependencyValidation.png
 		stylecop.json = stylecop.json
 	EndProjectSection
 EndProject
